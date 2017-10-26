@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.8)
+project(STGGame2)
+
+set(CMAKE_CXX_STANDARD 11)
+
+set(SOURCE_FILES
+        include/cleanup.h
+        include/pointd.h
+        include/res_path.h
+        include/SDL2_header.h
+        res/fonts/msyh.ttf
+        res/image/blue_strip24.png
+        res/image/bullet.png
+        res/image/d1.png
+        res/image/d2.png
+        res/image/d3.png
+        res/image/enemy.png
+        res/image/etama.png
+        res/image/player.png
+        res/image/player00.png
+        res/image/player_u.png
+        res/image/poison_strip24.png
+        res/image/red_strip24.png
+        src/main.cpp
+        #src/main2.cpp
+        src/SDL2_header.cpp)
+
+add_executable(STGGame2 ${SOURCE_FILES})
