@@ -126,7 +126,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/CommonInclude.h">
+			<Option target="STG_Game"/>
+		</Unit>
+		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/Message.h">
+			<Option target="STG_Game"/>
+		</Unit>
 		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/SDL2_header.h">
+			<Option target="STG_Game"/>
+		</Unit>
+		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/StringProcess.h">
+			<Option target="STG_Game"/>
+		</Unit>
+		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/UserDefined.h">
 			<Option target="STG_Game"/>
 		</Unit>
 		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/cleanup.h">

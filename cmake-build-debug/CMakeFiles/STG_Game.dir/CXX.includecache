@@ -6,6 +6,34 @@
 
 #IncludeRegexTransform: 
 
+../include/CommonInclude.h
+cstdio
+-
+iostream
+-
+cstdlib
+-
+ctime
+-
+algorithm
+-
+map
+-
+stdexcept
+-
+stack
+-
+queue
+-
+deque
+-
+sstream
+-
+
+../include/Message.h
+CommonInclude.h
+../include/CommonInclude.h
+
 ../include/SDL2_header.h
 SDL2/SDL.h
 -
@@ -29,6 +57,18 @@ res_path.h
 ../include/res_path.h
 pointd.h
 ../include/pointd.h
+
+../include/StringProcess.h
+CommonInclude.h
+../include/CommonInclude.h
+
+../include/UserDefined.h
+CommonInclude.h
+../include/CommonInclude.h
+Message.h
+../include/Message.h
+StringProcess.h
+../include/StringProcess.h
 
 ../include/cleanup.h
 utility
@@ -59,8 +99,6 @@ SDL2_header.h
 /Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp
 SDL2_header.h
 /Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/SDL2_header.h
-cstdio
--
-map
--
+UserDefined.h
+/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/UserDefined.h
 
