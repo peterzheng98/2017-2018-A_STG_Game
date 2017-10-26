@@ -172,6 +172,17 @@ void deal()
     //Calculate new position
     posPlayer = posPlayer + velocityPlayer;
 
+    //判定是否边界。Flag = 5
+    int w,h;
+    getImageSize( imagePlayer, w, h );
+    posPlayer.x = posPlayer.x+w/2 > _LIMIT_WIDTH ? _LIMIT_WIDTH - w/2 : posPlayer.x;
+    posPlayer.y = posPlayer.y+h/2 > _LIMIT_HEIGHT ? _LIMIT_HEIGHT - h/2 : posPlayer.y;
+    posPlayer.x = posPlayer.x-w/2 < 0 ? w/2 : posPlayer.x;
+    posPlayer.y = posPlayer.y-h/2 < 0 ? h/2 : posPlayer.y;
+    if(move){
+        msg.makepair(0,0,"Player pos(" + itos(posPlayer.x) + "," + itos(posPlayer.y) + ")","",1,"main.cpp",5);
+        print_debug(msg,"debug.log");
+    }
     //Stop player
     if(!move)
     {
