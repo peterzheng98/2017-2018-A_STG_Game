@@ -129,6 +129,9 @@
 		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/CommonInclude.h">
 			<Option target="STG_Game"/>
 		</Unit>
+		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/Item.h">
+			<Option target="STG_Game"/>
+		</Unit>
 		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/Message.h">
 			<Option target="STG_Game"/>
 		</Unit>

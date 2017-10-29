@@ -21,3 +21,8 @@
 #include <sstream>
 
 using namespace std;
+
+enum flight{
+    Enemy,
+    Friend,
+};
