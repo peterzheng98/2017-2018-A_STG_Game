@@ -7,15 +7,18 @@
 using namespace Game;
 
 
-const int Game::SCREEN_WIDTH	= 800;
-const int Game::SCREEN_HEIGHT	= 600;
+const int Game::SCREEN_WIDTH	= 1024;
+const int Game::SCREEN_HEIGHT	= 768;
+
+int ets = 20;//边界阈值
+int EdgeX[30], EdgeY[30];
 const std::string Game::TitleName = "STG Game(Peter Zheng, ACM Class, 517030910430)";
 
 std::map<int, bool> keyboard;
 
 
 std::vector<Flight> enemy;
-
+std::vector<Bullet> bullet;
 
 PointD posPlayer, velocityPlayer;
 PointD posEnemy[10];
@@ -97,7 +100,14 @@ void drawPlayer()
     if(Timer==0){
         Flight enemytmp;
         enemytmp.newenemy();
+        enemytmp.velocity = 5;
         enemy.push_back(enemytmp);
+        Bullet bullet1;
+        bullet1.pos.x = enemytmp.pos.x;
+        bullet1.pos.y = enemytmp.pos.y;
+        bullet1.velocity = rand() % 10 + 5;
+        bullet.push_back(bullet1);
+
         msg.makepair(0,0,"New enemy: position(" + itos(enemytmp.pos.x) + "," + itos(enemytmp.pos.y) + ")","",1,"main.cpp",4);
         print_debug(msg,"debug.log");
         msg.makepair(0,0,"Vector Size:" + itos(enemy.size()),"",1,"main.cpp",5);
@@ -138,7 +148,23 @@ void drawHint()
 }
 void drawBullet()
 {
+    int w,h;
+    getImageSize( imageBullet, w, h );
+    //画子弹
+    int len = bullet.size();
+    for (int i = 0; i < len; ++i) {
+        drawImage(imageBullet, bullet[i].pos.x - w/2, bullet[i].pos.y - h / 2);
+    }
 
+    len = bullet.size();
+    for(int i = 0;i < len; i++){
+        bullet[i].pos.y += bullet[i].velocity;
+        bullet[i].getAreaCode();
+        if(bullet[i].pos.y > Game::SCREEN_HEIGHT) {
+            bullet.erase(bullet.begin()+i);
+            i--;
+        }
+    }
 }
 void drawEnemy()
 {
@@ -152,12 +178,20 @@ void drawEnemy()
 
     len = enemy.size();
     for(int i = 0;i < len; i++){
-        enemy[i].pos.y += 5;
+        enemy[i].pos.y += enemy[i].velocity;
+        enemy[i].getAreaCode();
         if(enemy[i].pos.y > Game::SCREEN_HEIGHT) {
             enemy.erase(enemy.begin()+i);
             i--;
         }
     }
+
+    //敌方飞机打子弹
+    len = enemy.size();
+    for (int j = 0; j < len; ++j) {
+
+    }
+
     //drawImage( imageEnemy, posEnemy[0].x-w/2, posEnemy[0].y-h/2 );
 }
 
