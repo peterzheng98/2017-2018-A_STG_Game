@@ -29,6 +29,16 @@ deque
 -
 sstream
 -
+cstdlib
+-
+vector
+-
+
+../include/Item.h
+CommonInclude.h
+../include/CommonInclude.h
+pointd.h
+../include/pointd.h
 
 ../include/Message.h
 CommonInclude.h
@@ -69,6 +79,8 @@ Message.h
 ../include/Message.h
 StringProcess.h
 ../include/StringProcess.h
+Item.h
+../include/Item.h
 
 ../include/cleanup.h
 utility

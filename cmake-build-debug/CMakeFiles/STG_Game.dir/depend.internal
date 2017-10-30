@@ -9,6 +9,7 @@ CMakeFiles/STG_Game.dir/src/SDL2_header.cpp.o
  /Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/SDL2_header.cpp
 CMakeFiles/STG_Game.dir/src/main.cpp.o
  ../include/CommonInclude.h
+ ../include/Item.h
  ../include/Message.h
  ../include/SDL2_header.h
  ../include/StringProcess.h

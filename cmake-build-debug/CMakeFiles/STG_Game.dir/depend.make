@@ -8,6 +8,7 @@ CMakeFiles/STG_Game.dir/src/SDL2_header.cpp.o: ../include/res_path.h
 CMakeFiles/STG_Game.dir/src/SDL2_header.cpp.o: ../src/SDL2_header.cpp
 
 CMakeFiles/STG_Game.dir/src/main.cpp.o: ../include/CommonInclude.h
+CMakeFiles/STG_Game.dir/src/main.cpp.o: ../include/Item.h
 CMakeFiles/STG_Game.dir/src/main.cpp.o: ../include/Message.h
 CMakeFiles/STG_Game.dir/src/main.cpp.o: ../include/SDL2_header.h
 CMakeFiles/STG_Game.dir/src/main.cpp.o: ../include/StringProcess.h

@@ -5,6 +5,18 @@
 #ifndef STG_GAME_COMMONINCLUDE_H
 #define STG_GAME_COMMONINCLUDE_H
 
+enum flight{
+    Enemy,
+    Boss,
+    Friend,
+    MainFlight
+};
+
+//定义飞机的基础血量
+const int _HP_Boss = 100;
+const int _HP_Enemy = 10;
+const int _HP_Friend = 10;
+
 #endif //STG_GAME_COMMONINCLUDE_H
 
 
@@ -19,10 +31,7 @@
 #include <queue>
 #include <deque>
 #include <sstream>
-
+#include <cstdlib>
+#include <vector>
 using namespace std;
 
-enum flight{
-    Enemy,
-    Friend,
-};

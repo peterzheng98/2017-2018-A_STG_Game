@@ -7,12 +7,14 @@
 using namespace Game;
 
 
-const int Game::SCREEN_WIDTH	= 480;
-const int Game::SCREEN_HEIGHT	= 640;
+const int Game::SCREEN_WIDTH	= 800;
+const int Game::SCREEN_HEIGHT	= 600;
 const std::string Game::TitleName = "STG Game(Peter Zheng, ACM Class, 517030910430)";
 
 std::map<int, bool> keyboard;
 
+
+std::vector<Flight> enemy;
 
 
 PointD posPlayer, velocityPlayer;
@@ -33,6 +35,7 @@ Message msg;
 int Timer = 0;
 void initialize()
 {
+    srand((unsigned int)(time(NULL)));
     //Flag = 1  Debug Mode
     try {
         dbg = fopen("debug.log","a");
@@ -42,6 +45,9 @@ void initialize()
         fprintf(dbg,"=======================[%d-%d-%d %d:%d:%d] Program Start=========================\n",nowTime->tm_year+1900,
                 nowTime->tm_mon+1,nowTime->tm_mday,nowTime->tm_hour,nowTime->tm_min,nowTime->tm_sec);
         fclose(dbg);
+        FILE *option;
+        option = fopen("debug.ini","r");
+
     } catch (std::exception e){
         Message msg;
         time_t timer;
@@ -83,8 +89,20 @@ void drawPlayer()
     if(Timer==0){
         msg.makepair(0,0,"In drawPlayer() process.","",1,"main.cpp",4);
         print_debug(msg,"debug.log");
+        /*Flight enemytmp;
+        enemytmp.newenemy();
+        enemy.push_back(enemytmp);*/
     }
-    Timer = (Timer + 1) % (FPS_RATE * 5);
+    Timer = (Timer + 1) % (FPS_RATE);
+    if(Timer==0){
+        Flight enemytmp;
+        enemytmp.newenemy();
+        enemy.push_back(enemytmp);
+        msg.makepair(0,0,"New enemy: position(" + itos(enemytmp.pos.x) + "," + itos(enemytmp.pos.y) + ")","",1,"main.cpp",4);
+        print_debug(msg,"debug.log");
+        msg.makepair(0,0,"Vector Size:" + itos(enemy.size()),"",1,"main.cpp",5);
+        print_debug(msg,"debug.log");
+    }
 
 
     try {
@@ -126,7 +144,21 @@ void drawEnemy()
 {
     int w,h;
     getImageSize( imageEnemy, w, h );
-    drawImage( imageEnemy, posEnemy[0].x-w/2, posEnemy[0].y-h/2 );
+    //画飞机
+    int len = enemy.size();
+    for (int i = 0; i < len; ++i) {
+        drawImage(imageEnemy, enemy[i].pos.x - w/2, enemy[i].pos.y - h / 2);
+    }
+
+    len = enemy.size();
+    for(int i = 0;i < len; i++){
+        enemy[i].pos.y += 5;
+        if(enemy[i].pos.y > Game::SCREEN_HEIGHT) {
+            enemy.erase(enemy.begin()+i);
+            i--;
+        }
+    }
+    //drawImage( imageEnemy, posEnemy[0].x-w/2, posEnemy[0].y-h/2 );
 }
 
 void draw()
@@ -208,6 +240,7 @@ int work( bool &quit )
 
 void mousePress()
 {
+
 }
 
 void mouseMove()
