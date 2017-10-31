@@ -33,8 +33,12 @@ cstdlib
 -
 vector
 -
+unistd.h
+-
 
 ../include/Item.h
+SDL2_header.h
+../include/SDL2_header.h
 CommonInclude.h
 ../include/CommonInclude.h
 pointd.h
@@ -107,10 +111,14 @@ pointd.h
 /Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/pointd.h
 SDL2_header.h
 /Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/SDL2_header.h
+StringProcess.h
+/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/StringProcess.h
 
 /Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp
 SDL2_header.h
 /Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/SDL2_header.h
 UserDefined.h
 /Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/UserDefined.h
+unistd.h
+-
 

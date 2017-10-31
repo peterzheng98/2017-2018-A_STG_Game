@@ -3,6 +3,8 @@
 #include "pointd.h"
 #include "SDL2_header.h"
 
+/*#include "Message.h"
+#include "StringProcess.h"*/
 // -------------res_path.h------------
 std::string getResourcePath(const std::string &subDir){
 #ifdef _WIN32
@@ -219,6 +221,9 @@ void drawImage(Image *img, int x, int y,
 			   const FlipType &flip,
 			   const Rect *clip)
 {
+    /*Message msg;
+    msg.makepair(0,0,"Img:" + itos(&img) + "Created.","",2,"SDL2_header.cpp",222);
+    print_debug(msg,"debug.log");*/
 	SDL_Renderer *ren = renderer;
 	renderTexture( img, ren, x, y, widthRate, heightRate, angle, center, flip, clip );
 }

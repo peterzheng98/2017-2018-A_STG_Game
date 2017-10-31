@@ -5,9 +5,11 @@
 #ifndef STG_GAME_ITEM_H
 #define STG_GAME_ITEM_H
 
+#include "SDL2_header.h"
 #endif //STG_GAME_ITEM_H
 
 #include "CommonInclude.h"
+
 #include "pointd.h"
 struct Flight {
     flight kind;
@@ -17,7 +19,7 @@ struct Flight {
     bool avail;
     PointD areacode;
     int velocity;
-    int OccurTime, interval;
+    uint64_t OccurTime, interval;
     void getAreaCode(){
         areacode.x = pos.x / 128;
         areacode.y = pos.y / 96;
@@ -28,6 +30,7 @@ struct Flight {
         //srand((time(NULL)));
         pos.x = rand() % Game::SCREEN_WIDTH;
         pos.y = 0;
+        OccurTime = Game::duration_i;
     };
 };
 struct Bullet {
@@ -35,6 +38,8 @@ struct Bullet {
     int trace;
     // 1 = 圆心散开  2 = 尾随我方飞机 3 = 竖直飞
     int velocity;
+    int user;
+    //1 = 敌机
     bool avail;
     PointD areacode;
     void getAreaCode(){

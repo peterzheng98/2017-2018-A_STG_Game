@@ -141,6 +141,9 @@
 		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/StringProcess.h">
 			<Option target="STG_Game"/>
 		</Unit>
+		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/Timer.h">
+			<Option target="STG_Game"/>
+		</Unit>
 		<Unit filename="/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/include/UserDefined.h">
 			<Option target="STG_Game"/>
 		</Unit>

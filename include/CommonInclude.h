@@ -33,5 +33,7 @@ const int _HP_Friend = 10;
 #include <sstream>
 #include <cstdlib>
 #include <vector>
+//#include <pthread>
+#include <unistd.h>
 using namespace std;
 

@@ -41,7 +41,7 @@ set(SOURCE_FILES
     include/res_path.h      include/cleanup.h
     include/SDL2_header.h   src/SDL2_header.cpp
     include/pointd.h
-    src/main.cpp include/CommonInclude.h include/Message.h include/StringProcess.h include/UserDefined.h include/Item.h)
+    src/main.cpp include/CommonInclude.h include/Message.h include/StringProcess.h include/UserDefined.h include/Item.h include/Timer.h)
 
 if (NOT ${PROJECT_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_BINARY_DIR})
         file(COPY "${PROJECT_SOURCE_DIR}/res" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

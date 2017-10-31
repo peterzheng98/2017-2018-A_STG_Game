@@ -2,7 +2,7 @@
 // Created by Peter Zheng on 2017/10/24.
 //
 #include "CommonInclude.h"
-/*#ifndef STG_GAME_MESSAGE_H
+#ifndef STG_GAME_MESSAGE_H
 #define STG_GAME_MESSAGE_H
 
 #endif //STG_GAME_MESSAGE_H*/
