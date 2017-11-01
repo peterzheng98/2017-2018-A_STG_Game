@@ -7,20 +7,24 @@
 #define _LIMIT_HEIGHT SCREEN_HEIGHT
 using namespace Game;
 
+int sign[] = {-1,1};
 
-const int Game::SCREEN_WIDTH	= 800;
+const int Game::SCREEN_WIDTH	= 1024;
 const int Game::SCREEN_HEIGHT	= 768;
 int imagew, imageh;
+int pxt = 0;
 bool _game_over = false;
 uint64_t lastSPACE = 0;
 uint64_t FPSRateCurrent = 0;
 uint64_t StopAnimationCount = 0;
+uint64_t Skill_CD = 0;
 const std::string Game::TitleName = "STG Game(Peter Zheng, ACM Class, 517030910430)";
 int Timer;
 std::map<int, bool> keyboard;
 
-int score = 0, hp = 1, bump = 3;
+int score = 0, hp = 5, bump = 3;
 
+string scoreStr, Hp_bumpStr;
 std::vector<Flight> enemy;
 std::vector<Bullet> bullet;
 std::vector<Bullet> userbullet;
@@ -105,7 +109,7 @@ void drawPlayer()
             enemy.push_back(enemytmp);*/
         }
         Timer = (Timer + 1) % (FPS_RATE);
-        if(Timer % 40 == 0 && !_game_over){
+        if(Timer % 30 == 0 && !_game_over){
             Flight enemytmp;
             enemytmp.newenemy();
             enemytmp.velocity = 5;
@@ -119,7 +123,7 @@ void drawPlayer()
             bullet.push_back(bullet1);
             bullet1.pos.x = enemytmp.pos.x;
             bullet1.pos.y = enemytmp.pos.y;
-            bullet1.velocity = rand()%12 + 7;
+            bullet1.velocity = rand() % 12 + 5;
             bullet1.user = 1;
             msg.makepair(0,0,"New enemy: position(" + itos(enemytmp.pos.x) + "," + itos(enemytmp.pos.y) + ")","",1,"main.cpp",4);
             print_debug(msg,"debug.log");
@@ -159,11 +163,16 @@ void drawBackground()
 }
 void drawHint()
 {
-    /*Image *text = textToImage( "< This is a simple game demo. >" );
+    Image *text = textToImage( Hp_bumpStr );
+    Image *text2 = textToImage( scoreStr);
     int w,h;
     getImageSize( text, w, h );
-    drawImage( text, SCREEN_WIDTH/2-w/2, SCREEN_HEIGHT-h );
-    cleanup(text);*/
+    drawImage( text, 0 , SCREEN_HEIGHT-h );
+    cleanup(text);
+
+    getImageSize( text2, w, h );
+    drawImage( text2, 0 , SCREEN_HEIGHT-2*h );
+    cleanup(text2);
 }
 /*void bump(){
     //TODO: minus User HP;
@@ -182,7 +191,7 @@ void drawBullet()
         //画子弹
         int len = bullet.size();
         for (int i = 0; i < len; ++i) {
-            drawImage(imageBullet, bullet[i].pos.x - w / 2, bullet[i].pos.y - h / 2);
+            drawImage(imageBullet, bullet[i].pos.x - w / 2 , bullet[i].pos.y - h / 2);
         }
 
         int len2 = userbullet.size();
@@ -192,6 +201,7 @@ void drawBullet()
         len = bullet.size();
         for(int i = 0;i < len; i++){
             bullet[i].pos.y += bullet[i].velocity;
+            bullet[i].pos.x += sign[rand()%2]*rand()%100;
             bullet[i].getAreaCode();
 
             try{
@@ -271,6 +281,17 @@ void deal()
     if(!_game_over){
         bool move = false;
         //Calculate velocity
+        if( keyboard['q'] && bump > 0 && Skill_CD < duration){
+            std::vector<Bullet> bullet1;
+            bullet = bullet1;
+            std::vector<Flight> enemy1;
+            enemy = enemy1;
+            std::vector<Bullet> bullet3;
+            userbullet = bullet3;
+            bump--;
+            Skill_CD = duration + 2;
+            return;
+        }
         if( keyboard[KEY_UP]	|| keyboard['w'] )
         {
             velocityPlayer = velocityPlayer + PointD(0,-1)*speedPlayer;
@@ -342,7 +363,7 @@ void deal()
         }
         for (int i = 0; i < bullet.size(); ++i) {
             if((abs(posPlayer.x - bullet[i].pos.x)) < (imagew/4) && abs(posPlayer.y-bullet[i].pos.y) < (imageh/4)){
-                hp--;
+                hp--;bump = 3;
                 std::vector<Bullet> bullet1;
                 bullet = bullet1;
                 std::vector<Flight> enemy1;
@@ -392,6 +413,15 @@ int work( bool &quit )
 {
     drawPlayer();
     FPSRateCurrent ++;
+    if(hp>0){
+        Hp_bumpStr = "HP: " + itos(hp) + "       Skill : " + itos(bump);
+        scoreStr = "Your Score: " + itos(score);
+    } else {
+        Hp_bumpStr = "Game Over";
+        scoreStr = "Your Score: " + itos(score);
+    }
+
+
     //Calculate sth.
     deal();
 
@@ -415,16 +445,16 @@ int work( bool &quit )
             msg.makepair(0,0,"Game Over! All button locked!","",1,"main.cpp",397);
             print_debug(msg,"debug.log");
             double start = duration;
-            int i = 0;
-            while(i<24){
+            //int i = 0;
+            //while(i<24){
                 if(abs(start-duration)<1e-5){
                     Rect rect;
-                    rect.x = 32*i; rect.y = 0; rect.w = rect.h = 32;
+                    rect.x = 32 * pxt; rect.y = 0; rect.w = rect.h = 32;
                     msg.makepair(0,0,"Lead in Image:"+itos(&GameOver) + " with rect:"+itos(&rect),"",1,"main.cpp",389);
                     print_debug(msg,"debug.log");
                     drawImage(GameOver,posPlayer.x,posPlayer.y,1,1,0,NULL,FLIP_NONE,&rect);
-                    rect.x = 32 * i;
-                    i++;
+                    rect.x = 32 * pxt;
+                    pxt++;
                     start += 1/24;
                 }
                 //StopAnimationCount = duration_i - start;
@@ -434,8 +464,8 @@ int work( bool &quit )
                 //sleep(1);
                 //}
                 //StopAnimationCount++;
-            }
-            hp--;
+            //}
+            if(pxt>=24) hp--;
         }
     }
 
