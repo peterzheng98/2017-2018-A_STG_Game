@@ -22,7 +22,7 @@ const std::string Game::TitleName = "STG Game(Peter Zheng, ACM Class, 5170309104
 int Timer;
 std::map<int, bool> keyboard;
 
-int score = 0, hp = 5, bump = 3;
+int score = 0, hp = 5000, bump = 3;
 
 string scoreStr, Hp_bumpStr;
 std::vector<Flight> enemy;
@@ -109,7 +109,12 @@ void drawPlayer()
             enemy.push_back(enemytmp);*/
         }
         Timer = (Timer + 1) % (FPS_RATE);
-        if(Timer % 30 == 0 && !_game_over){
+        int p = 0;
+        if(score < 20) p = 55;
+        else if(score < 40) p =30;
+        else if(score < 60) p =10;
+        else p = 5;
+        if(Timer % p == 0 && !_game_over){
             Flight enemytmp;
             enemytmp.newenemy();
             enemytmp.velocity = 5;
@@ -201,7 +206,7 @@ void drawBullet()
         len = bullet.size();
         for(int i = 0;i < len; i++){
             bullet[i].pos.y += bullet[i].velocity;
-            bullet[i].pos.x += sign[rand()%2]*rand()%100;
+            if(score > 40 && i %  20 ==0) bullet[i].pos.x += sign[rand()%2]*rand()%50;
             bullet[i].getAreaCode();
 
             try{
