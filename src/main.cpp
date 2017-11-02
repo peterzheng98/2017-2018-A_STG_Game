@@ -26,7 +26,8 @@ int Timer;
 std::map<int, bool> keyboard;
 
 int score = 0, hp = 5000, bump = 3;
-
+Uint8 *audio_chunk, *audio_pos;
+int audio_len;
 string scoreStr, Hp_bumpStr;
 std::vector<Flight> enemy;
 std::vector<Bullet> bullet;
@@ -49,8 +50,71 @@ void loadPictures()
 }
 FILE *dbg;
 Message msg;
+
+void  fill_audio(void *udata,Uint8 *stream,int len){
+    //SDL 2.0
+    SDL_memset(stream, 0, len);
+    if(audio_len==0)
+        return;
+    len=(len>audio_len?audio_len:len);
+
+    SDL_MixAudio(stream,audio_pos,len,SDL_MIX_MAXVOLUME);
+    audio_pos += len;
+    audio_len -= len;
+}
+
+void pcmplay(){
+    SDL_Init(SDL_INIT_AUDIO);
+    SDL_AudioSpec spec;
+    spec.freq = 44100;
+    spec.format = AUDIO_S16SYS;
+    spec.channels = 2;
+    spec.silence = 0;
+    spec.samples = 1024;
+    spec.callback = fill_audio;
+    if(SDL_OpenAudio(&spec, NULL) < 0){
+        msg.makepair(2,0,"In THREAD: PCMPLAYING: Can't open Audio!", " Can't open Audio!", 1,"main.cpp", 63);
+        print_debug(msg,"debug.log");
+        return;
+    }
+
+    FILE *wav = fopen("2.wav","rb+");
+    if(wav == NULL){
+        msg.makepair(2,0,"In THREAD: PCMPLAYING: Can't open Audio File!", " Can't open Audio File!", 1,"main.cpp", 70);
+        print_debug(msg,"debug.log");
+        return;
+    }
+
+    int pcm_buffer_size = 4096;
+    char *pcm_buffer = (char *) malloc(pcm_buffer_size);
+    int data_count = 0;
+
+    SDL_PauseAudio(0);
+
+    while(true){
+        if(fread(pcm_buffer,1, pcm_buffer_size, wav)!= pcm_buffer_size){
+            fseek(wav,0,SEEK_SET);
+            fread(pcm_buffer,1,pcm_buffer_size,wav);
+            data_count = 0;
+        }
+        msg.makepair(0,0,"In THREAD: PCMPLAYING: Now Playing" + itos(data_count) + "Bytes Data.", "", 1,"main.cpp", 87);
+        print_debug(msg,"debug.log");
+        data_count+=pcm_buffer_size;
+        audio_chunk = (Uint8 *) pcm_buffer;
+        audio_len = pcm_buffer_size;
+        audio_pos = audio_chunk;
+        while(audio_len>0)
+            SDL_Delay(1);
+    }
+    free(pcm_buffer);
+    SDL_Quit();
+
+    return;
+}
 void initialize()
 {
+    thread PCMPlaying(pcmplay);
+    PCMPlaying.detach();
     Timer = 0;
     srand((unsigned int)(time(NULL)));
     //Flag = 1  Debug Mode
