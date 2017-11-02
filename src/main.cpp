@@ -3,6 +3,9 @@
 #include "UserDefined.h"
 
 #include <unistd.h>
+
+#include <thread>
+
 #define _LIMIT_WIDTH SCREEN_WIDTH
 #define _LIMIT_HEIGHT SCREEN_HEIGHT
 using namespace Game;
@@ -111,7 +114,7 @@ void drawPlayer()
         Timer = (Timer + 1) % (FPS_RATE);
         int p = 0;
         if(score < 20) p = 55;
-        else if(score < 40) p =30;
+        else if(score < 40) p =20;
         else if(score < 60) p =10;
         else p = 5;
         if(Timer % p == 0 && !_game_over){
@@ -420,7 +423,10 @@ int work( bool &quit )
     FPSRateCurrent ++;
     if(hp>0){
         Hp_bumpStr = "HP: " + itos(hp) + "       Skill : " + itos(bump);
-        scoreStr = "Your Score: " + itos(score);
+        scoreStr = "Your Score: " + itos(score)/* + "     广告：澳门首家线上赌场上线了！"*/;
+        if(score > 20 && score < 40) Hp_bumpStr += "   是不是觉得有些简单？我们再来一些！";
+        else if(score >= 40 && score <=60) Hp_bumpStr += "   是不是觉得游戏难度更大了？充钱可以让你获得更多有用的道具！";
+        else if(score > 60) Hp_bumpStr += "   是不是觉得太难了，赶紧充钱吧！充钱能让你变得更强！";
     } else {
         Hp_bumpStr = "Game Over";
         scoreStr = "Your Score: " + itos(score);
