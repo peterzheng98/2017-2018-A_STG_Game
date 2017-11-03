@@ -78,7 +78,7 @@ void pcmplay(){
         return;
     }
 
-    FILE *wav = fopen("2.wav","rb+");
+    FILE *wav = fopen("bgm.wav","rb+");
     if(wav == NULL){
         msg.makepair(2,0,"In THREAD: PCMPLAYING: Can't open Audio File!", " Can't open Audio File!", 1,"main.cpp", 70);
         print_debug(msg,"debug.log");
