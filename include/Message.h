@@ -4,7 +4,7 @@
 #include "CommonInclude.h"
 #ifndef STG_GAME_MESSAGE_H
 #define STG_GAME_MESSAGE_H
-
+extern int cTimer;
 #endif //STG_GAME_MESSAGE_H*/
 
 const char *ID2Note[4] = {"INFO","WARN","Exception","FatalError"};
@@ -23,8 +23,8 @@ struct Message{
         time(&timer);
         struct tm *nowTime = localtime(&timer);
         Time = *nowTime;
-        printf("[%d-%d-%d %d:%d:%d]:[%s at File(%s) id(%d) Flag %d]%s",Time.tm_year+1900,Time.tm_mon+1
-        ,Time.tm_mday,Time.tm_hour,Time.tm_min,Time.tm_sec,ID2Note[type],FileName.c_str(),Fileid,line,text.c_str());
+        printf("[%d-%d-%d %d:%d:%d]:[RunTime: %d seconds]:[%s at File(%s) id(%d) Flag %d]%s",Time.tm_year+1900,Time.tm_mon+1
+        ,Time.tm_mday,Time.tm_hour,Time.tm_min,Time.tm_sec,cTimer,ID2Note[type],FileName.c_str(),Fileid,line,text.c_str());
         if(id==3) printf(" %s\n",fataltext.c_str()); else printf("\n");
     }
 
@@ -33,8 +33,8 @@ struct Message{
         time(&timer);
         struct tm *nowTime = localtime(&timer);
         Time = *nowTime;
-        fprintf(fq,"[%d-%d-%d %d:%d:%d]:[%s at File(%s) id(%d) Flag %d]%s",Time.tm_year+1900,Time.tm_mon+1
-                ,Time.tm_mday,Time.tm_hour,Time.tm_min,Time.tm_sec,ID2Note[type],FileName.c_str(),Fileid,line,text.c_str());
+        fprintf(fq,"[%d-%d-%d %d:%d:%d]:[RunTime: %d seconds]:[%s at File(%s) id(%d) Flag %d]%s",Time.tm_year+1900,Time.tm_mon+1
+                ,Time.tm_mday,Time.tm_hour,Time.tm_min,Time.tm_sec,cTimer,ID2Note[type],FileName.c_str(),Fileid,line,text.c_str());
         if(id==3) fprintf(fq," %s\n",fataltext.c_str()); else fprintf(fq,"\n");
     }
 

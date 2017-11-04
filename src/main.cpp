@@ -4,14 +4,12 @@
 
 #include <unistd.h>
 
-#include <thread>
-
+#define DEBUG_MODE
 #define _LIMIT_WIDTH SCREEN_WIDTH
 #define _LIMIT_HEIGHT SCREEN_HEIGHT
 using namespace Game;
 
 int sign[] = {-1,1};
-
 const int Game::SCREEN_WIDTH	= 1024;
 const int Game::SCREEN_HEIGHT	= 768;
 int imagew, imageh;
@@ -22,13 +20,14 @@ uint64_t FPSRateCurrent = 0;
 uint64_t StopAnimationCount = 0;
 uint64_t Skill_CD = 0;
 const std::string Game::TitleName = "STG Game(Peter Zheng, ACM Class, 517030910430)";
-int Timer;
 std::map<int, bool> keyboard;
 
 int score = 0, hp = 5000, bump = 3;
+
 Uint8 *audio_chunk, *audio_pos;
 int audio_len;
-string scoreStr, Hp_bumpStr;
+
+string scoreStr, Hp_bumpStr, debugStr1, debugStr2, debugStr3, debugStr4;
 std::vector<Flight> enemy;
 std::vector<Bullet> bullet;
 std::vector<Bullet> userbullet;
@@ -37,10 +36,10 @@ PointD posPlayer, velocityPlayer;
 PointD posEnemy[10];
 int enemyNumber, imageNumber;
 double speedPlayer;
-
+int cTimer = 0, Timer = 0;
 Image *imagePlayer, *imageBullet, *imageEnemy, *images[100];
 Image *GameOver;
-
+bool 打炮了 = false;
 void loadPictures()
 {
     imagePlayer = loadImage( "player.png"	);
@@ -50,8 +49,8 @@ void loadPictures()
 }
 FILE *dbg;
 Message msg;
-
-void  fill_audio(void *udata,Uint8 *stream,int len){
+pthread_t bgmthread, timerthread;
+void fill_audio(void *udata,Uint8 *stream,int len){
     //SDL 2.0
     SDL_memset(stream, 0, len);
     if(audio_len==0)
@@ -63,7 +62,8 @@ void  fill_audio(void *udata,Uint8 *stream,int len){
     audio_len -= len;
 }
 
-void pcmplay(){
+void *pcmplay(void *arg){
+    pthread_detach(pthread_self());
     SDL_Init(SDL_INIT_AUDIO);
     SDL_AudioSpec spec;
     spec.freq = 44100;
@@ -75,14 +75,14 @@ void pcmplay(){
     if(SDL_OpenAudio(&spec, NULL) < 0){
         msg.makepair(2,0,"In THREAD: PCMPLAYING: Can't open Audio!", " Can't open Audio!", 1,"main.cpp", 63);
         print_debug(msg,"debug.log");
-        return;
+        return ( (void*) 100);
     }
-
-    FILE *wav = fopen("bgm.wav","rb+");
+    FILE* wav;
+    wav = fopen("bgm2.wav","rb+");
     if(wav == NULL){
         msg.makepair(2,0,"In THREAD: PCMPLAYING: Can't open Audio File!", " Can't open Audio File!", 1,"main.cpp", 70);
         print_debug(msg,"debug.log");
-        return;
+        return ( (void*) 100);
     }
 
     int pcm_buffer_size = 4096;
@@ -108,14 +108,30 @@ void pcmplay(){
     }
     free(pcm_buffer);
     SDL_Quit();
+    return ( (void*) 100);
 
-    return;
+}
+
+void *TimeCountThread(void *arg){
+    pthread_detach(pthread_self());
+    while (1){
+        cTimer++;
+        sleep(1);
+    }
 }
 void initialize()
 {
-    thread PCMPlaying(pcmplay);
-    PCMPlaying.detach();
-    Timer = 0;
+    int err = pthread_create(&bgmthread,NULL,pcmplay,NULL);
+    if(err!=0){
+        msg.makepair(3,0,"Can't create pthread BGMplaying For Error detected.",strerror(err),1,"main.cpp",120);
+        print_debug(msg,"debug.log");
+    }
+
+    err = pthread_create(&timerthread,NULL,TimeCountThread,NULL);
+    if(err!=0){
+        msg.makepair(3,0,"Can't create pthread TimeCountThread For Error detected.",strerror(err),1,"main.cpp",120);
+        print_debug(msg,"debug.log");
+    }
     srand((unsigned int)(time(NULL)));
     //Flag = 1  Debug Mode
     try {
@@ -151,8 +167,8 @@ void initialize()
     //Initialize vairables
     //Flag = 3;
     posPlayer = PointD( SCREEN_WIDTH/2, SCREEN_HEIGHT/2 );
-    msg.makepair(0,0,"posPlayer =(" + itos(posPlayer.x) + "," + itos(posPlayer.y) + ")","",1,"main.cpp",3);
-    print_debug(msg,"debug.log");
+    /*msg.makepair(0,0,"posPlayer =(" + itos(posPlayer.x) + "," + itos(posPlayer.y) + ")","",1,"main.cpp",3);
+    print_debug(msg,"debug.log");*/
 
     posEnemy[0] = posPlayer;
     enemyNumber = 1;
@@ -168,13 +184,13 @@ void drawPlayer()
 {
     if(!_game_over){
         //Flag = 4
-        if(Timer==0 && !_game_over){
+        /*if(Timer==0 && !_game_over){
             msg.makepair(0,0,"In drawPlayer() process.","",1,"main.cpp",4);
             print_debug(msg,"debug.log");
-            /*Flight enemytmp;
+            Flight enemytmp;
             enemytmp.newenemy();
-            enemy.push_back(enemytmp);*/
-        }
+            enemy.push_back(enemytmp);
+        }*/
         Timer = (Timer + 1) % (FPS_RATE);
         int p = 0;
         if(score < 20) p = 55;
@@ -237,6 +253,12 @@ void drawHint()
 {
     Image *text = textToImage( Hp_bumpStr );
     Image *text2 = textToImage( scoreStr);
+#ifdef DEBUG_MODE
+    Image *text3 = textToImage( debugStr1 );
+    Image *text4 = textToImage( debugStr2 );
+    Image *text5 = textToImage( debugStr3 );
+    Image *text6 = textToImage( debugStr4 );
+#endif
     int w,h;
     getImageSize( text, w, h );
     drawImage( text, 0 , SCREEN_HEIGHT-h );
@@ -245,6 +267,23 @@ void drawHint()
     getImageSize( text2, w, h );
     drawImage( text2, 0 , SCREEN_HEIGHT-2*h );
     cleanup(text2);
+
+#ifdef DEBUG_MODE
+    getImageSize( text3, w, h );
+    drawImage( text3, 0 , SCREEN_HEIGHT-3*h );
+    cleanup(text3);
+
+    getImageSize( text4, w, h );
+    drawImage( text4, 0 , SCREEN_HEIGHT-4*h );
+    cleanup(text4);
+
+    getImageSize( text5, w, h );
+    drawImage( text5, 0 , SCREEN_HEIGHT-7*h );
+    cleanup(text5);
+    getImageSize( text6, w, h );
+    drawImage( text6, 0 , SCREEN_HEIGHT-5.5*h );
+    cleanup(text6);
+#endif
 }
 /*void bump(){
     //TODO: minus User HP;
@@ -391,6 +430,13 @@ void deal()
                 bullet1.user = 0;
                 bullet1.pos = posPlayer;
                 userbullet.push_back(bullet1);
+                /*if(!打炮了){
+                    打炮了 = true;
+                    thread 播放子弹轰击音乐(pcmplay, 3);
+                    播放子弹轰击音乐.detach();
+                    打炮了 = false;
+                }*/
+
                 //lastSPACE = duration_i;
             }
         }
@@ -486,8 +532,16 @@ int work( bool &quit )
     drawPlayer();
     FPSRateCurrent ++;
     if(hp>0){
-        Hp_bumpStr = "HP: " + itos(hp) + "       Skill : " + itos(bump);
-        scoreStr = "Your Score: " + itos(score)/* + "     广告：澳门首家线上赌场上线了！"*/;
+        Hp_bumpStr = "HP: " + itos(hp) + "       Skill : " + itos(bump) + "     ";
+#ifdef DEBUG_MODE
+        debugStr1 = "运行时间(线程返回): "+ itos(cTimer) + "  秒" + "  (变量返回): "+itos(duration)+ "  秒  (系统返回): " + itos(cTimer) + "秒"
+            /*    BGM Sound : ON     Sound : Error(com.apple.audiokit)"*/;
+        debugStr2 = "用户坐标("+itos(posPlayer.x)+","+itos(posPlayer.y)+")     敌机计数:"+itos(enemy.size())+"  子弹数: "+itos(bullet.size())+
+                "  用户子弹数: " + itos(userbullet.size());
+        debugStr3 = "线程监控系统：启动（简易模式）";
+        debugStr4 = "背景音效:正常|音效:ERROR(11,EXC_BAD_ACCESS Crash:com.apple.audio.IOThread.client)";
+#endif
+        scoreStr = "Your Score: " + itos(score)/* + "      Running Time(Thread): "+ itos(cTimer) + "  Seconds" + "  (Variable)duration: "+itos(duration)+"  Seconds." + "     广告：澳门首家线上赌场上线了！"*/;
         if(score > 20 && score < 40) Hp_bumpStr += "   是不是觉得有些简单？我们再来一些！";
         else if(score >= 40 && score <=60) Hp_bumpStr += "   是不是觉得游戏难度更大了？充钱可以让你获得更多有用的道具！";
         else if(score > 60) Hp_bumpStr += "   是不是觉得太难了，赶紧充钱吧！充钱能让你变得更强！";
