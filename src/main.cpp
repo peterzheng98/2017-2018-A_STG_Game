@@ -103,7 +103,7 @@ void *pcmplay(void *arg){
             fread(pcm_buffer,1,pcm_buffer_size,wav);
             data_count = 0;
         }
-        msg.makepair(0,0,"In THREAD: PCMPLAYING: Now Playing" + itos(data_count) + "Bytes Data.", "", 1,"main.cpp", 87);
+        msg.makepair(0,0,"In THREAD: PCMPLAYING: Now Playing  " + itos(data_count) + "  Bytes Data.", "", 1,"main.cpp", 87);
         print_debug(msg,"debug.log");
         data_count+=pcm_buffer_size;
         audio_chunk = (Uint8 *) pcm_buffer;
