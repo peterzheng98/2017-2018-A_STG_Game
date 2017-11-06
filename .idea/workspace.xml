@@ -12,12 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61dff11-e422-4a2c-961f-2c974f39838d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STG_Game.dir/src/SDL2_header.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STG_Game.dir/src/SDL2_header.cpp.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STG_Game.dir/src/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STG_Game.dir/src/main.cpp.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/bin/STG_Game" afterPath="$PROJECT_DIR$/cmake-build-debug/bin/STG_Game" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SDL2_header.cpp" afterPath="$PROJECT_DIR$/src/SDL2_header.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -53,8 +50,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="91" column="30" lean-forward="false" selection-start-line="91" selection-start-column="30" selection-end-line="91" selection-end-column="30" />
+            <state relative-caret-position="330">
+              <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
                 <element signature="e#1581#3136#0" expanded="false" />
@@ -119,6 +116,7 @@
       <find>Timer</find>
       <find>Hp_bumpStr</find>
       <find>duration</find>
+      <find>#ifdef DEBUG_MODE</find>
     </findStrings>
     <replaceStrings>
       <replace>posPlayer</replace>
@@ -275,12 +273,12 @@
       <workItem from="1509860773037" duration="475000" />
       <workItem from="1509869243829" duration="892000" />
       <workItem from="1509879876356" duration="606000" />
-      <workItem from="1509940268851" duration="380000" />
+      <workItem from="1509940268851" duration="1346000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63749000" />
+    <option name="totallyTimeSpent" value="64715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
@@ -346,7 +344,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -800,8 +798,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="91" column="30" lean-forward="false" selection-start-line="91" selection-start-column="30" selection-end-line="91" selection-end-column="30" />
+        <state relative-caret-position="330">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
             <element signature="e#1581#3136#0" expanded="false" />

@@ -4,11 +4,13 @@
 
 #include <unistd.h>
 
-#define DEBUG_MODE
+//#define DEBUG_MODE
 #define _LIMIT_WIDTH SCREEN_WIDTH
 #define _LIMIT_HEIGHT SCREEN_HEIGHT
 using namespace Game;
 
+bool debug_mode = false;
+bool start = false;
 int sign[] = {-1,1};
 const int Game::SCREEN_WIDTH	= 1024;
 const int Game::SCREEN_HEIGHT	= 768;
@@ -257,12 +259,27 @@ void drawHint()
 {
     Image *text = textToImage( Hp_bumpStr );
     Image *text2 = textToImage( scoreStr);
-#ifdef DEBUG_MODE
-    Image *text3 = textToImage( debugStr1 );
-    Image *text4 = textToImage( debugStr2 );
-    Image *text5 = textToImage( debugStr3 );
-    Image *text6 = textToImage( debugStr4 );
-#endif
+    if(debug_mode){
+        int w,h;
+        Image *text3 = textToImage( debugStr1 );
+        Image *text4 = textToImage( debugStr2 );
+        Image *text5 = textToImage( debugStr3 );
+        Image *text6 = textToImage( debugStr4 );
+        getImageSize( text3, w, h );
+        drawImage( text3, 0 , SCREEN_HEIGHT-3*h );
+        cleanup(text3);
+
+        getImageSize( text4, w, h );
+        drawImage( text4, 0 , SCREEN_HEIGHT-4*h );
+        cleanup(text4);
+
+        getImageSize( text5, w, h );
+        drawImage( text5, 0 , SCREEN_HEIGHT-7*h );
+        cleanup(text5);
+        getImageSize( text6, w, h );
+        drawImage( text6, 0 , SCREEN_HEIGHT-5.5*h );
+        cleanup(text6);
+    }
     int w,h;
     getImageSize( text, w, h );
     drawImage( text, 0 , SCREEN_HEIGHT-h );
@@ -271,23 +288,6 @@ void drawHint()
     getImageSize( text2, w, h );
     drawImage( text2, 0 , SCREEN_HEIGHT-2*h );
     cleanup(text2);
-
-#ifdef DEBUG_MODE
-    getImageSize( text3, w, h );
-    drawImage( text3, 0 , SCREEN_HEIGHT-3*h );
-    cleanup(text3);
-
-    getImageSize( text4, w, h );
-    drawImage( text4, 0 , SCREEN_HEIGHT-4*h );
-    cleanup(text4);
-
-    getImageSize( text5, w, h );
-    drawImage( text5, 0 , SCREEN_HEIGHT-7*h );
-    cleanup(text5);
-    getImageSize( text6, w, h );
-    drawImage( text6, 0 , SCREEN_HEIGHT-5.5*h );
-    cleanup(text6);
-#endif
 }
 /*void bump(){
     //TODO: minus User HP;
@@ -533,53 +533,84 @@ void Animation_GameOver(PointD point, uint64_t start){
 }
 int work( bool &quit )
 {
-    drawPlayer();
-    FPSRateCurrent ++;
-    if(hp>0){
-        Hp_bumpStr = "HP: " + itos(hp) + "       Skill : " + itos(bump) + "     ";
-#ifdef DEBUG_MODE
-        debugStr1 = "运行时间(线程返回): "+ itos(cTimer) + "  秒" + "  (变量返回): {1}"+itos(SDL_GetTicks())+ "秒 {2} "+itos(duration)+" 秒  (系统返回): " + itos(cTimer) + "秒"
-            /*    BGM Sound : ON     Sound : Error(com.apple.audiokit)"*/;
-        debugStr2 = "用户坐标("+itos(posPlayer.x)+","+itos(posPlayer.y)+")     敌机计数:"+itos(enemy.size())+"  子弹数: "+itos(bullet.size())+
-                "  用户子弹数: " + itos(userbullet.size());
-        debugStr3 = "线程监控系统：启动（简易模式）";
-        debugStr4 = "背景音效:正常|音效:ERROR(11,EXC_BAD_ACCESS Crash:com.apple.audio.IOThread.client)";
-#endif
-        scoreStr = "Your Score: " + itos(score)/* + "      Running Time(Thread): "+ itos(cTimer) + "  Seconds" + "  (Variable)duration: "+itos(duration)+"  Seconds." + "     广告：澳门首家线上赌场上线了！"*/;
-        if(score > 20 && score < 40) Hp_bumpStr += "   是不是觉得有些简单？我们再来一些！";
-        else if(score >= 40 && score <=60) Hp_bumpStr += "   是不是觉得游戏难度更大了？充钱可以让你获得更多有用的道具！";
-        else if(score > 60) Hp_bumpStr += "   是不是觉得太难了，赶紧充钱吧！充钱能让你变得更强！";
-    } else {
-        Hp_bumpStr = "Game Over";
-        scoreStr = "Your Score: " + itos(score);
+    if(!start){
+        string Welcome = "Welcome to Thunder Game!";
+        string wel2 = "Press [R] To start the game.";
+        string wel3 = "Press [D] To debug the game.";
+        Image *txt1 = textToImage(Welcome);
+        Image *txt2 = textToImage(wel2);
+        Image *txt3 = textToImage(wel3);
+        int w,h;
+        getImageSize( txt1, w, h );
+        drawImage( txt1, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 - h / 2 );
+        cleanup(txt1);
+
+        getImageSize( txt2, w, h );
+        drawImage( txt2, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 + h / 2 );
+        cleanup(txt2);
+
+        getImageSize( txt3, w, h );
+        drawImage( txt3, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 + 3 * h / 2 );
+        cleanup(txt3);
+
+        if( keyboard['r'])
+        {
+            start = true;
+        }
+        if(keyboard['d']){
+            debug_mode = true;
+            hp = 5000;
+            start = true;
+        }
     }
+    if(start){
+        drawPlayer();
+        FPSRateCurrent ++;
+        if(hp>0){
+            Hp_bumpStr = "HP: " + itos(hp) + "       Skill : " + itos(bump) + "     ";
+            if(debug_mode){
+                debugStr1 = "运行时间(线程返回): "+ itos(cTimer) + "  秒" + "  (变量返回): {1}"+itos(SDL_GetTicks())+ "秒 {2} "+itos(duration)+" 秒  (系统返回): " + itos(cTimer) + "秒"
+                    /*    BGM Sound : ON     Sound : Error(com.apple.audiokit)"*/;
+                debugStr2 = "用户坐标("+itos(posPlayer.x)+","+itos(posPlayer.y)+")     敌机计数:"+itos(enemy.size())+"  子弹数: "+itos(bullet.size())+
+                            "  用户子弹数: " + itos(userbullet.size());
+                debugStr3 = "线程监控系统：启动（简易模式）";
+                debugStr4 = "背景音效:正常|音效:ERROR(11,EXC_BAD_ACCESS Crash:com.apple.audio.IOThread.client)";
+            }
+            scoreStr = "Your Score: " + itos(score)/* + "      Running Time(Thread): "+ itos(cTimer) + "  Seconds" + "  (Variable)duration: "+itos(duration)+"  Seconds." + "     广告：澳门首家线上赌场上线了！"*/;
+            if(score > 20 && score < 40) Hp_bumpStr += "   是不是觉得有些简单？我们再来一些！";
+            else if(score >= 40 && score <=60) Hp_bumpStr += "   是不是觉得游戏难度更大了？充钱可以让你获得更多有用的道具！";
+            else if(score > 60) Hp_bumpStr += "   是不是觉得太难了，赶紧充钱吧！充钱能让你变得更强！";
+        } else {
+            Hp_bumpStr = "Game Over";
+            scoreStr = "Your Score: " + itos(score);
+        }
 
 
-    //Calculate sth.
-    deal();
+        //Calculate sth.
+        deal();
 
-    /*FILE *file;
-    file = fopen("monitor.log","a+");
-    fprintf(file,"Enemy Count:%lld\n Bullet Count:%lld\n User-Position:%f,%f\n",enemy.size(),bullet.size(),posPlayer.x,posPlayer.y);
-    fclose(file);*/
+        /*FILE *file;
+        file = fopen("monitor.log","a+");
+        fprintf(file,"Enemy Count:%lld\n Bullet Count:%lld\n User-Position:%f,%f\n",enemy.size(),bullet.size(),posPlayer.x,posPlayer.y);
+        fclose(file);*/
 
-    if(hp<=0){
-        //ToDo Game Over part
-        std::vector<Bullet> bullet1;
-        bullet = bullet1;
-        std::vector<Flight> enemy1;
-        enemy = enemy1;
-        std::vector<Bullet> bullet3;
-        userbullet = bullet3;
-        drawBackground();
-        _game_over = true;
-        PointD start = posPlayer;
-        if(hp==0) {
-            msg.makepair(0,0,"Game Over! All button locked!","",1,"main.cpp",397);
-            print_debug(msg,"debug.log");
-            double start = duration;
-            //int i = 0;
-            //while(i<24){
+        if(hp<=0){
+            //ToDo Game Over part
+            std::vector<Bullet> bullet1;
+            bullet = bullet1;
+            std::vector<Flight> enemy1;
+            enemy = enemy1;
+            std::vector<Bullet> bullet3;
+            userbullet = bullet3;
+            drawBackground();
+            _game_over = true;
+            PointD start = posPlayer;
+            if(hp==0) {
+                msg.makepair(0,0,"Game Over! All button locked!","",1,"main.cpp",397);
+                print_debug(msg,"debug.log");
+                double start = duration;
+                //int i = 0;
+                //while(i<24){
                 if(abs(start-duration)<1e-5){
                     Rect rect;
                     rect.x = 32 * pxt; rect.y = 0; rect.w = rect.h = 32;
@@ -597,17 +628,19 @@ int work( bool &quit )
                 //sleep(1);
                 //}
                 //StopAnimationCount++;
-            //}
-            if(pxt>=24) hp--;
+                //}
+                if(pxt>=24) hp--;
+            }
         }
+
+        //Draw on the screen
+        draw();
+
+        if( keyboard[KEY_ESC] )
+            quit = true;
+        return 0;
     }
 
-    //Draw on the screen
-    draw();
-
-    if( keyboard[KEY_ESC] )
-        quit = true;
-    return 0;
 }
 
 void mousePress()
