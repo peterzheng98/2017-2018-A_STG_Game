@@ -21,9 +21,13 @@ uint64_t StopAnimationCount = 0;
 uint64_t Skill_CD = 0;
 const std::string Game::TitleName = "STG Game(Peter Zheng, ACM Class, 517030910430)";
 std::map<int, bool> keyboard;
-
-int score = 0, hp = 5000, bump = 3;
-
+#ifdef DEBUG_MODE
+int hp = 5000;
+#endif
+int score = 0, bump = 3;
+#ifndef DEBUG_MODE
+int hp = 5;
+#endif
 Uint8 *audio_chunk, *audio_pos;
 int audio_len;
 
@@ -85,7 +89,7 @@ void *pcmplay(void *arg){
         return ( (void*) 100);
     }
 
-    int pcm_buffer_size = 4096;
+    int pcm_buffer_size = 8192;
     char *pcm_buffer = (char *) malloc(pcm_buffer_size);
     int data_count = 0;
 
@@ -194,9 +198,9 @@ void drawPlayer()
         Timer = (Timer + 1) % (FPS_RATE);
         int p = 0;
         if(score < 20) p = 55;
-        else if(score < 40) p =20;
-        else if(score < 60) p =10;
-        else p = 5;
+        else if(score < 40) p =30;
+        else if(score < 60) p =20;
+        else p = 10;
         if(Timer % p == 0 && !_game_over){
             Flight enemytmp;
             enemytmp.newenemy();
@@ -534,7 +538,7 @@ int work( bool &quit )
     if(hp>0){
         Hp_bumpStr = "HP: " + itos(hp) + "       Skill : " + itos(bump) + "     ";
 #ifdef DEBUG_MODE
-        debugStr1 = "运行时间(线程返回): "+ itos(cTimer) + "  秒" + "  (变量返回): "+itos(duration)+ "  秒  (系统返回): " + itos(cTimer) + "秒"
+        debugStr1 = "运行时间(线程返回): "+ itos(cTimer) + "  秒" + "  (变量返回): {1}"+itos(SDL_GetTicks())+ "秒 {2} "+itos(duration)+" 秒  (系统返回): " + itos(cTimer) + "秒"
             /*    BGM Sound : ON     Sound : Error(com.apple.audiokit)"*/;
         debugStr2 = "用户坐标("+itos(posPlayer.x)+","+itos(posPlayer.y)+")     敌机计数:"+itos(enemy.size())+"  子弹数: "+itos(bullet.size())+
                 "  用户子弹数: " + itos(userbullet.size());
