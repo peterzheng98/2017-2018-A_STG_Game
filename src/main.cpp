@@ -8,7 +8,7 @@
 #define _LIMIT_WIDTH SCREEN_WIDTH
 #define _LIMIT_HEIGHT SCREEN_HEIGHT
 using namespace Game;
-
+bool __lock = false;
 bool debug_mode = false;
 bool start = false;
 int sign[] = {-1,1};
@@ -98,6 +98,13 @@ void *pcmplay(void *arg){
     SDL_PauseAudio(0);
 
     while(true){
+        if(start && !__lock){
+           wav = fopen("bgm.wav","rb+");
+            int pcm_buffer_size = 8192;
+            char *pcm_buffer = (char *) malloc(pcm_buffer_size);
+            int data_count = 0;
+            __lock = true;
+        }
         if(fread(pcm_buffer,1, pcm_buffer_size, wav)!= pcm_buffer_size){
             fseek(wav,0,SEEK_SET);
             fread(pcm_buffer,1,pcm_buffer_size,wav);
