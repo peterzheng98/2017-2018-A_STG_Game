@@ -8,6 +8,9 @@
 #define _LIMIT_WIDTH SCREEN_WIDTH
 #define _LIMIT_HEIGHT SCREEN_HEIGHT
 using namespace Game;
+double rate = 0;
+int HitAll = 0;
+int HitGet = 0;
 bool __lock = false;
 bool debug_mode = false;
 bool start = false;
@@ -79,14 +82,14 @@ void *pcmplay(void *arg){
     spec.samples = 1024;
     spec.callback = fill_audio;
     if(SDL_OpenAudio(&spec, NULL) < 0){
-        msg.makepair(2,0,"In THREAD: PCMPLAYING: Can't open Audio!", " Can't open Audio!", 1,"main.cpp", 63);
+        msg.makepair(2,0,"In THREAD: PCMPLAYING: Audio Device Binding Failed", " Can't open Audio!", 1,__FILE__, __LINE__);
         print_debug(msg,"debug.log");
         return ( (void*) 100);
     }
     FILE* wav;
     wav = fopen("bgm2.wav","rb+");
     if(wav == NULL){
-        msg.makepair(2,0,"In THREAD: PCMPLAYING: Can't open Audio File!", " Can't open Audio File!", 1,"main.cpp", 70);
+        msg.makepair(2,0,"In THREAD: PCMPLAYING: Can't open Audio File!", " Can't open Audio File!", 1,__FILE__, __LINE__);
         print_debug(msg,"debug.log");
         return ( (void*) 100);
     }
@@ -110,7 +113,7 @@ void *pcmplay(void *arg){
             fread(pcm_buffer,1,pcm_buffer_size,wav);
             data_count = 0;
         }
-        msg.makepair(0,0,"In THREAD: PCMPLAYING: Now Playing  " + itos(data_count) + "  Bytes Data.", "", 1,"main.cpp", 87);
+        msg.makepair(0,0,"In THREAD: PCMPLAYING: Now Playing  " + itos(data_count) + "  Bytes Data.", "", 1,__FILE__, __LINE__);
         print_debug(msg,"debug.log");
         data_count+=pcm_buffer_size;
         audio_chunk = (Uint8 *) pcm_buffer;
@@ -136,13 +139,13 @@ void initialize()
 {
     int err = pthread_create(&bgmthread,NULL,pcmplay,NULL);
     if(err!=0){
-        msg.makepair(3,0,"Can't create pthread BGMplaying For Error detected.",strerror(err),1,"main.cpp",120);
+        msg.makepair(3,0,"Can't create pthread BGMplaying For Error detected.",strerror(err),1,__FILE__, __LINE__);
         print_debug(msg,"debug.log");
     }
 
     err = pthread_create(&timerthread,NULL,TimeCountThread,NULL);
     if(err!=0){
-        msg.makepair(3,0,"Can't create pthread TimeCountThread For Error detected.",strerror(err),1,"main.cpp",120);
+        msg.makepair(3,0,"Can't create pthread TimeCountThread For Error detected.",strerror(err),1,__FILE__, __LINE__);
         print_debug(msg,"debug.log");
     }
     srand((unsigned int)(time(NULL)));
@@ -163,7 +166,7 @@ void initialize()
         time_t timer;
         time(&timer);
         struct tm *nowTime = localtime(&timer);
-        msg.makepair(3,0,e.what(),e.what(),1,"main.cpp",1);
+        msg.makepair(3,0,e.what(),e.what(),1,__FILE__, __LINE__);
         msg.print();
     }
 
@@ -174,7 +177,7 @@ void initialize()
     time(&timer);
     struct tm *nowTime = localtime(&timer);
     //Message msg;
-    msg.makepair(0,0,"FPS Display = True","",1,"main.cpp",2);
+    msg.makepair(0,0,"FPS Display = True","",1,__FILE__, __LINE__);
     print_debug(msg,"debug.log");
 
     //Initialize vairables
@@ -226,13 +229,13 @@ void drawPlayer()
             bullet1.pos.y = enemytmp.pos.y;
             bullet1.velocity = rand() % 12 + 5;
             bullet1.user = 1;
-            msg.makepair(0,0,"New enemy: position(" + itos(enemytmp.pos.x) + "," + itos(enemytmp.pos.y) + ")","",1,"main.cpp",4);
+            msg.makepair(0,0,"New enemy: position(" + itos(enemytmp.pos.x) + "," + itos(enemytmp.pos.y) + ")","",1,__FILE__, __LINE__);
             print_debug(msg,"debug.log");
-            msg.makepair(0,0,"Vector Size:" + itos(enemy.size()),"",1,"main.cpp",5);
+            msg.makepair(0,0,"Vector Size:" + itos(enemy.size()),"",1,__FILE__, __LINE__);
             print_debug(msg,"debug.log");
-            msg.makepair(0,0,"bullet Address:" + itos(&bullet) + " Size = " + itos(bullet.size()),"",1,"main.cpp",184);
+            msg.makepair(0,0,"bullet Address:" + itos(&bullet) + " Size = " + itos(bullet.size()),"",1,__FILE__, __LINE__);
             print_debug(msg,"debug.log");
-            msg.makepair(0,0,"userbullet Address:" + itos(&userbullet) + " Size = " + itos(userbullet.size()),"",1,"main.cpp",184);
+            msg.makepair(0,0,"userbullet Address:" + itos(&userbullet) + " Size = " + itos(userbullet.size()),"",1,__FILE__, __LINE__);
             print_debug(msg,"debug.log");
         }
 
@@ -242,7 +245,7 @@ void drawPlayer()
             getImageSize( imagePlayer, w, h );
             drawImage( imagePlayer, posPlayer.x-w/2, posPlayer.y-h/2);
         } catch (exception e){
-            msg.makepair(3,0,e.what(),e.what(),1,"main.cpp",4);
+            msg.makepair(3,0,e.what(),e.what(),1,__FILE__, __LINE__);
             print_debug(msg,"debug.log");
         }
     }
@@ -401,6 +404,7 @@ void draw()
 void deal()
 {
     if(!_game_over){
+        //rate = HitGet/HitAll;
         bool move = false;
         //Calculate velocity
         if( keyboard['q'] && bump > 0 && Skill_CD < duration){
@@ -441,6 +445,7 @@ void deal()
                 bullet1.user = 0;
                 bullet1.pos = posPlayer;
                 userbullet.push_back(bullet1);
+                HitAll++;
                 /*if(!打炮了){
                     打炮了 = true;
                     thread 播放子弹轰击音乐(pcmplay, 3);
@@ -484,6 +489,7 @@ void deal()
                 if((abs(enemy[j].pos.x - userbullet[i].pos.x)) < (imagew/4) && abs(enemy[j].pos.y - userbullet[i].pos.y) < (imageh/4)){
                     score++;
                     userbullet.erase(userbullet.begin() + i);
+                    HitGet++;
                     i--;
                     enemy.erase(enemy.begin() + j);
                     j--;
@@ -519,7 +525,7 @@ void deal()
         posPlayer.x = posPlayer.x-w/2 < 0 ? w/2 : posPlayer.x;
         posPlayer.y = posPlayer.y-h/2 < 0 ? h/2 : posPlayer.y;
         if(move){
-            msg.makepair(0,0,"Player pos(" + itos(posPlayer.x) + "," + itos(posPlayer.y) + ")","",1,"main.cpp",5);
+            msg.makepair(0,0,"Player pos(" + itos(posPlayer.x) + "," + itos(posPlayer.y) + ")","",1,__FILE__, __LINE__);
             print_debug(msg,"debug.log");
         }
         //Stop player
@@ -544,9 +550,11 @@ int work( bool &quit )
         string Welcome = "Welcome to Thunder Game!";
         string wel2 = "Press [R] To start the game.";
         string wel3 = "Press [D] To debug the game.";
+        string wel4 = "Press [ESC] To Exit the game.";
         Image *txt1 = textToImage(Welcome);
         Image *txt2 = textToImage(wel2);
         Image *txt3 = textToImage(wel3);
+        Image *txt4 = textToImage(wel4);
         int w,h;
         getImageSize( txt1, w, h );
         drawImage( txt1, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 - h / 2 );
@@ -560,6 +568,10 @@ int work( bool &quit )
         drawImage( txt3, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 + 3 * h / 2 );
         cleanup(txt3);
 
+        getImageSize( txt4, w, h );
+        drawImage( txt4, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 + 5 * h / 2 );
+        cleanup(txt4);
+
         if( keyboard['r'])
         {
             start = true;
@@ -569,6 +581,9 @@ int work( bool &quit )
             hp = 5000;
             start = true;
         }
+        if( keyboard[KEY_ESC] )
+            quit = true;
+        return 0;
     }
     if(start){
         drawPlayer();
@@ -580,7 +595,7 @@ int work( bool &quit )
                     /*    BGM Sound : ON     Sound : Error(com.apple.audiokit)"*/;
                 debugStr2 = "用户坐标("+itos(posPlayer.x)+","+itos(posPlayer.y)+")     敌机计数:"+itos(enemy.size())+"  子弹数: "+itos(bullet.size())+
                             "  用户子弹数: " + itos(userbullet.size());
-                debugStr3 = "线程监控系统：启动（简易模式）";
+                debugStr3 = "线程监控系统：启动（简易模式）  总发出子弹：" + itos(HitAll) + "  打中子弹：" + itos(HitGet);
                 debugStr4 = "背景音效:正常|音效:ERROR(11,EXC_BAD_ACCESS Crash:com.apple.audio.IOThread.client)";
             }
             scoreStr = "Your Score: " + itos(score)/* + "      Running Time(Thread): "+ itos(cTimer) + "  Seconds" + "  (Variable)duration: "+itos(duration)+"  Seconds." + "     广告：澳门首家线上赌场上线了！"*/;
@@ -612,8 +627,33 @@ int work( bool &quit )
             drawBackground();
             _game_over = true;
             PointD start = posPlayer;
+            rate = (HitAll == 0 ? 0 : (HitGet+0.000001)/HitAll) * 100;
+            string Welcome = "Game Over!";
+            string wel2 = scoreStr;
+            string wel3 = "Hitting Rate: " + itos(rate) + "%";
+            string wel4 = "Press [ESC] To Exit the game.";
+            Image *txt1 = textToImage(Welcome);
+            Image *txt2 = textToImage(wel2);
+            Image *txt3 = textToImage(wel3);
+            Image *txt4 = textToImage(wel4);
+            int w,h;
+            getImageSize( txt1, w, h );
+            drawImage( txt1, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 - h / 2 );
+            cleanup(txt1);
+
+            getImageSize( txt2, w, h );
+            drawImage( txt2, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 + h / 2 );
+            cleanup(txt2);
+
+            getImageSize( txt3, w, h );
+            drawImage( txt3, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 + 3 * h / 2 );
+            cleanup(txt3);
+
+            getImageSize( txt4, w, h );
+            drawImage( txt4, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 + 5 * h / 2 );
+            cleanup(txt4);
             if(hp==0) {
-                msg.makepair(0,0,"Game Over! All button locked!","",1,"main.cpp",397);
+                msg.makepair(0,0,"Game Over! All button locked!","",1,__FILE__, __LINE__);
                 print_debug(msg,"debug.log");
                 double start = duration;
                 //int i = 0;
@@ -621,7 +661,7 @@ int work( bool &quit )
                 if(abs(start-duration)<1e-5){
                     Rect rect;
                     rect.x = 32 * pxt; rect.y = 0; rect.w = rect.h = 32;
-                    msg.makepair(0,0,"Lead in Image:"+itos(&GameOver) + " with rect:"+itos(&rect),"",1,"main.cpp",389);
+                    msg.makepair(0,0,"Lead in Image:"+itos(&GameOver) + " with rect:"+itos(&rect),"",1,__FILE__, __LINE__);
                     print_debug(msg,"debug.log");
                     drawImage(GameOver,posPlayer.x,posPlayer.y,1,1,0,NULL,FLIP_NONE,&rect);
                     rect.x = 32 * pxt;
