@@ -194,6 +194,16 @@ void initialize()
     //Load pictures from files
     loadPictures();
 
+    _game_over = false;
+
+    std::vector<Bullet> bullet1;
+    bullet = bullet1;
+    std::vector<Flight> enemy1;
+    enemy = enemy1;
+    std::vector<Bullet> bullet3;
+    userbullet = bullet3;
+    hp = 5; bump = 3;
+    score = 0;
 }
 
 void drawPlayer()
@@ -346,7 +356,7 @@ void drawBullet()
             userbullet[i].getAreaCode();
 
             try {
-                if(userbullet[i].pos.y > Game::SCREEN_HEIGHT) {
+                if(userbullet[i].pos.y < 0) {
                     userbullet.erase(userbullet.begin()+i);
                     i--;
                     len2--;
@@ -632,10 +642,12 @@ int work( bool &quit )
             string wel2 = scoreStr;
             string wel3 = "Hitting Rate: " + itos(rate) + "%";
             string wel4 = "Press [ESC] To Exit the game.";
+            string wel5 = "Press [R] To Restart the game.";
             Image *txt1 = textToImage(Welcome);
             Image *txt2 = textToImage(wel2);
             Image *txt3 = textToImage(wel3);
             Image *txt4 = textToImage(wel4);
+            Image *txt5 = textToImage(wel5);
             int w,h;
             getImageSize( txt1, w, h );
             drawImage( txt1, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 - h / 2 );
@@ -652,6 +664,15 @@ int work( bool &quit )
             getImageSize( txt4, w, h );
             drawImage( txt4, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 + 5 * h / 2 );
             cleanup(txt4);
+
+            getImageSize( txt5, w, h );
+            drawImage( txt5, SCREEN_WIDTH / 2 - w / 2 , SCREEN_HEIGHT / 2 + 7 * h / 2 );
+            cleanup(txt5);
+
+            if( keyboard['r'] )
+                initialize();
+
+
             if(hp==0) {
                 msg.makepair(0,0,"Game Over! All button locked!","",1,__FILE__, __LINE__);
                 print_debug(msg,"debug.log");
@@ -692,7 +713,16 @@ int work( bool &quit )
 
 void mousePress()
 {
-
+    if(score>40) {
+        for (int j = 0; j < enemy.size(); ++j) {
+            if ((abs(enemy[j].pos.x - mouseX)) < (imagew / 1.5) &&
+                abs(enemy[j].pos.y - mouseY) < (imageh / 1.5)) {
+                score++;
+                enemy.erase(enemy.begin() + j);
+                j--;
+            }
+        }
+    }
 }
 
 void mouseMove()
@@ -702,7 +732,16 @@ void mouseMove()
 
 void mouseRelease()
 {
-
+    /*if(score>40) {
+        for (int j = 0; j < enemy.size(); ++j) {
+            if ((abs(enemy[j].pos.x - mouseX)) < (imagew / 2) &&
+                abs(enemy[j].pos.y - mouseY) < (imageh / 2)) {
+                score++;
+                enemy.erase(enemy.begin() + j);
+                j--;
+            }
+        }
+   /// }*/
 }
 
 void keyDown()
