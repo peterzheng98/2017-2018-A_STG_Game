@@ -23,9 +23,9 @@ struct Message{
         time(&timer);
         struct tm *nowTime = localtime(&timer);
         Time = *nowTime;
-        printf("[%d-%d-%d %d:%d:%d]:[RunTime: %d seconds]:[%s at File(%s) id(%d) Flag %d]%s",Time.tm_year+1900,Time.tm_mon+1
+        printf("[%d-%d-%d %d:%d:%d]:[RunTime: %d seconds]:[%s at File(%s) id(%d) Line(%d)]%s",Time.tm_year+1900,Time.tm_mon+1
         ,Time.tm_mday,Time.tm_hour,Time.tm_min,Time.tm_sec,cTimer,ID2Note[type],FileName.c_str(),Fileid,line,text.c_str());
-        if(id==3) printf(" %s\n",fataltext.c_str()); else printf("\n");
+        if(id==3) printf(" [Fatal Error:%s]\n",fataltext.c_str()); else printf("\n");
     }
 
     void print2file(FILE *fq){
@@ -33,9 +33,9 @@ struct Message{
         time(&timer);
         struct tm *nowTime = localtime(&timer);
         Time = *nowTime;
-        fprintf(fq,"[%d-%d-%d %d:%d:%d]:[RunTime: %d seconds]:[%s at File(%s) id(%d) Flag %d]%s",Time.tm_year+1900,Time.tm_mon+1
+        fprintf(fq,"[%d-%d-%d %d:%d:%d]:[RunTime: %d seconds]:[%s at File(%s) id(%d) Line(%d)]%s",Time.tm_year+1900,Time.tm_mon+1
                 ,Time.tm_mday,Time.tm_hour,Time.tm_min,Time.tm_sec,cTimer,ID2Note[type],FileName.c_str(),Fileid,line,text.c_str());
-        if(id==3) fprintf(fq," %s\n",fataltext.c_str()); else fprintf(fq,"\n");
+        if(id==3) fprintf(fq," [Fatal Error:%s]\n",fataltext.c_str()); else fprintf(fq,"\n");
     }
 
     void makepair(int Type,int Id, string Text, string Fataltext, int fileid, string filename, int Line){
@@ -62,5 +62,24 @@ void print_debug(Message msg, string filename){
     }
 }
 
+void prog_start(){
+    FILE *dbg = fopen("debug.log","a");
+    time_t timer;
+    time(&timer);
+    struct tm *nowTime = localtime(&timer);
+    fprintf(dbg,"=======================[%d-%d-%d %d:%d:%d] Program Start=========================\n",nowTime->tm_year+1900,
+            nowTime->tm_mon+1,nowTime->tm_mday,nowTime->tm_hour,nowTime->tm_min,nowTime->tm_sec);
+    fclose(dbg);
+}
+
+void prog_end(){
+    FILE *dbg = fopen("debug.log","a");
+    time_t timer;
+    time(&timer);
+    struct tm *nowTime = localtime(&timer);
+    fprintf(dbg,"=======================[%d-%d-%d %d:%d:%d] Program Finish========================\n",nowTime->tm_year+1900,
+            nowTime->tm_mon+1,nowTime->tm_mday,nowTime->tm_hour,nowTime->tm_min,nowTime->tm_sec);
+    fclose(dbg);
+}
 
 

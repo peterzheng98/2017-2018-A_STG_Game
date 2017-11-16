@@ -26,13 +26,13 @@ uint64_t StopAnimationCount = 0;
 uint64_t Skill_CD = 0;
 const std::string Game::TitleName = "STG Game(Peter Zheng, ACM Class, 517030910430)";
 std::map<int, bool> keyboard;
-#ifdef DEBUG_MODE
-int hp = 5000;
-#endif
+//#ifdef DEBUG_MODE
+//int hp = 5000;
+//#endif
 int score = 0, bump = 3;
-#ifndef DEBUG_MODE
+//#ifndef DEBUG_MODE
 int hp = 5;
-#endif
+//#endif
 Uint8 *audio_chunk, *audio_pos;
 int audio_len;
 
@@ -46,14 +46,14 @@ PointD posEnemy[10];
 int enemyNumber, imageNumber;
 double speedPlayer;
 int cTimer = 0, Timer = 0;
-Image *imagePlayer, *imageBullet, *imageEnemy, *images[100];
+Image *imagePlayer, *imageBullet, *imageEnemy,*imageCur, *images[100];
 Image *GameOver;
-bool 打炮了 = false;
 void loadPictures()
 {
     imagePlayer = loadImage( "player.png"	);
     imageBullet = loadImage( "bullet.png"	);
     imageEnemy	= loadImage( "player_u.png" );
+    imageCur = loadImage("cur.png");
     GameOver = loadImage("red_strip24.png");
 }
 FILE *dbg;
@@ -82,14 +82,14 @@ void *pcmplay(void *arg){
     spec.samples = 1024;
     spec.callback = fill_audio;
     if(SDL_OpenAudio(&spec, NULL) < 0){
-        msg.makepair(2,0,"In THREAD: PCMPLAYING: Audio Device Binding Failed", " Can't open Audio!", 1,__FILE__, __LINE__);
+        msg.makepair(2,0,"In Thread: PCMPLAYING: Audio Device Binding Failed", " Can't open Audio!", 1,__FILE__, __LINE__);
         print_debug(msg,"debug.log");
         return ( (void*) 100);
     }
     FILE* wav;
     wav = fopen("bgm2.wav","rb+");
     if(wav == NULL){
-        msg.makepair(2,0,"In THREAD: PCMPLAYING: Can't open Audio File!", " Can't open Audio File!", 1,__FILE__, __LINE__);
+        msg.makepair(2,0,"In Thread: PCMPLAYING: Can't open Audio File!", " Can't open Audio File!", 1,__FILE__, __LINE__);
         print_debug(msg,"debug.log");
         return ( (void*) 100);
     }
@@ -107,13 +107,15 @@ void *pcmplay(void *arg){
             char *pcm_buffer = (char *) malloc(pcm_buffer_size);
             int data_count = 0;
             __lock = true;
+            msg.makepair(0,0,"In Thread: PCMPLAYING: Start Game!(Locked!)","",1,__FILE__,__LINE__);
+            print_debug(msg,"debug.log");
         }
         if(fread(pcm_buffer,1, pcm_buffer_size, wav)!= pcm_buffer_size){
             fseek(wav,0,SEEK_SET);
             fread(pcm_buffer,1,pcm_buffer_size,wav);
             data_count = 0;
         }
-        msg.makepair(0,0,"In THREAD: PCMPLAYING: Now Playing  " + itos(data_count) + "  Bytes Data.", "", 1,__FILE__, __LINE__);
+        msg.makepair(0,0,"In Thread: PCMPLAYING: Now Playing  " + itos(data_count) + "  Bytes Data.", "", 1,__FILE__, __LINE__);
         print_debug(msg,"debug.log");
         data_count+=pcm_buffer_size;
         audio_chunk = (Uint8 *) pcm_buffer;
@@ -149,33 +151,17 @@ void initialize()
         print_debug(msg,"debug.log");
     }
     srand((unsigned int)(time(NULL)));
-    //Flag = 1  Debug Mode
     try {
-        dbg = fopen("debug.log","a");
-        time_t timer;
-        time(&timer);
-        struct tm *nowTime = localtime(&timer);
-        fprintf(dbg,"=======================[%d-%d-%d %d:%d:%d] Program Start=========================\n",nowTime->tm_year+1900,
-                nowTime->tm_mon+1,nowTime->tm_mday,nowTime->tm_hour,nowTime->tm_min,nowTime->tm_sec);
-        fclose(dbg);
+        prog_start();
         FILE *option;
         option = fopen("debug.ini","r");
 
     } catch (std::exception e){
-        Message msg;
-        time_t timer;
-        time(&timer);
-        struct tm *nowTime = localtime(&timer);
         msg.makepair(3,0,e.what(),e.what(),1,__FILE__, __LINE__);
         msg.print();
     }
 
-    //Flag = 2;Display FPS
     FPS_DISPLAY = true;
-    //msg传递
-    time_t timer;
-    time(&timer);
-    struct tm *nowTime = localtime(&timer);
     //Message msg;
     msg.makepair(0,0,"FPS Display = True","",1,__FILE__, __LINE__);
     print_debug(msg,"debug.log");
@@ -265,7 +251,6 @@ void drawPlayer()
 void drawBackground()
 {
     Rect rect = {0, 0, Game::SCREEN_WIDTH, Game::SCREEN_HEIGHT};
-
     //	Pay attention:
     //		(Color){255,255,0} means (Color){255,255,0,0}
     //		and means you will draw nothing
@@ -353,8 +338,7 @@ void drawBullet()
         len2 = userbullet.size();
         for (int i = 0; i < len2; ++i) {
             userbullet[i].pos.y += userbullet[i].velocity;
-            userbullet[i].getAreaCode();
-
+            //userbullet[i].getAreaCode();
             try {
                 if(userbullet[i].pos.y < 0) {
                     userbullet.erase(userbullet.begin()+i);
@@ -414,6 +398,9 @@ void draw()
 void deal()
 {
     if(!_game_over){
+        int w2,h2;
+        getImageSize( imageCur, w2, h2 );
+        drawImage(imageCur, mouseX - w2/2, mouseY - h2/2);
         //rate = HitGet/HitAll;
         bool move = false;
         //Calculate velocity
@@ -469,6 +456,19 @@ void deal()
 
         //查找碰撞问题
         getImageSize( imagePlayer, imagew, imageh );
+        for (int j = 0; j < enemy.size(); ++j) {
+            if ((abs(enemy[j].pos.x - posPlayer.x)) < (imagew / 2) &&
+                abs(enemy[j].pos.y - posPlayer.y) < (imageh / 2)) {
+                score++;
+                hp--;bump = 3;
+                std::vector<Bullet> bullet1;
+                bullet = bullet1;
+                std::vector<Flight> enemy1;
+                enemy = enemy1;
+                std::vector<Bullet> bullet3;
+                userbullet = bullet3; break;
+            }
+        }
         /*double posPlayerL = posPlayer.x - imagew/2, posPlayerR = posPlayerL + imagew;
         double posPlayerU = posPlayer.y - imageh/2, posPlayerD = posPlayerU + imageh;
         for (int i = 0; i < enemy.size(); ++i) {
@@ -521,7 +521,7 @@ void deal()
         double len = velocityPlayer.length();
         if( len > speedPlayer )
         {
-            velocityPlayer = velocityPlayer/len*speedPlayer;
+            velocityPlayer = velocityPlayer / len*speedPlayer;
         }
 
         //Calculate new position
@@ -608,10 +608,10 @@ int work( bool &quit )
                 debugStr3 = "线程监控系统：启动（简易模式）  总发出子弹：" + itos(HitAll) + "  打中子弹：" + itos(HitGet);
                 debugStr4 = "背景音效:正常|音效:ERROR(11,EXC_BAD_ACCESS Crash:com.apple.audio.IOThread.client)";
             }
-            scoreStr = "Your Score: " + itos(score)/* + "      Running Time(Thread): "+ itos(cTimer) + "  Seconds" + "  (Variable)duration: "+itos(duration)+"  Seconds." + "     广告：澳门首家线上赌场上线了！"*/;
+            scoreStr = "Your Score: " + itos(score)/* + "      Running Time(Thread): "+ itos(cTimer) + "  Seconds" + "  (Variable)duration: "+itos(duration)+"  Seconds."+ "     广告：澳门首家线上赌场上线了！"*/;
             if(score > 20 && score < 40) Hp_bumpStr += "   是不是觉得有些简单？我们再来一些！";
             else if(score >= 40 && score <=60) Hp_bumpStr += "   是不是觉得游戏难度更大了？充钱可以让你获得更多有用的道具！";
-            else if(score > 60) Hp_bumpStr += "   是不是觉得太难了，赶紧充钱吧！充钱能让你变得更强！";
+            else if(score > 60) Hp_bumpStr += "   是不是觉得太难了，赶紧充钱吧！充钱能让你变得更强！（支付宝账号：18621046687，姓名：郑文鑫）";
         } else {
             Hp_bumpStr = "Game Over";
             scoreStr = "Your Score: " + itos(score);
@@ -732,16 +732,6 @@ void mouseMove()
 
 void mouseRelease()
 {
-    /*if(score>40) {
-        for (int j = 0; j < enemy.size(); ++j) {
-            if ((abs(enemy[j].pos.x - mouseX)) < (imagew / 2) &&
-                abs(enemy[j].pos.y - mouseY) < (imageh / 2)) {
-                score++;
-                enemy.erase(enemy.begin() + j);
-                j--;
-            }
-        }
-   /// }*/
 }
 
 void keyDown()
@@ -758,17 +748,11 @@ void finale()
 {
 
     //Delete all images
-    cleanup( imagePlayer, imageBullet, imageEnemy, GameOver );
+    cleanup( imagePlayer, imageBullet, imageEnemy, GameOver, imageCur );
     for( int i = 0; i < imageNumber; ++i )
         cleanup( images[i] );
     try {
-        dbg = fopen("debug.log","a");
-        time_t timer;
-        time(&timer);
-        struct tm *nowTime = localtime(&timer);
-        fprintf(dbg,"=======================[%d-%d-%d %d:%d:%d] Program Finish========================\n",nowTime->tm_year+1900,
-                nowTime->tm_mon+1,nowTime->tm_mday,nowTime->tm_hour,nowTime->tm_min,nowTime->tm_sec);
-        fclose(dbg);
+        prog_end();
     } catch (std::exception e){
 
     }
