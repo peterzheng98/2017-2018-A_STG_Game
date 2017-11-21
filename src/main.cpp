@@ -35,7 +35,7 @@ int hp = 5;
 //#endif
 Uint8 *audio_chunk, *audio_pos;
 int audio_len;
-
+int data_count = 0;
 string scoreStr, Hp_bumpStr, debugStr1, debugStr2, debugStr3, debugStr4;
 std::vector<Flight> enemy;
 std::vector<Bullet> bullet;
@@ -57,8 +57,9 @@ void loadPictures()
     GameOver = loadImage("red_strip24.png");
 }
 FILE *dbg;
+bool PCMStatus = false;
 Message msg;
-pthread_t bgmthread, timerthread;
+pthread_t bgmthread, timerthread, fileMonitor;
 void fill_audio(void *udata,Uint8 *stream,int len){
     //SDL 2.0
     SDL_memset(stream, 0, len);
@@ -70,70 +71,139 @@ void fill_audio(void *udata,Uint8 *stream,int len){
     audio_pos += len;
     audio_len -= len;
 }
-
 void *pcmplay(void *arg){
+    Message msg;
+    PCMStatus = true;
     pthread_detach(pthread_self());
-    SDL_Init(SDL_INIT_AUDIO);
-    SDL_AudioSpec spec;
-    spec.freq = 44100;
-    spec.format = AUDIO_S16SYS;
-    spec.channels = 2;
-    spec.silence = 0;
-    spec.samples = 1024;
-    spec.callback = fill_audio;
-    if(SDL_OpenAudio(&spec, NULL) < 0){
-        msg.makepair(2,0,"In Thread: PCMPLAYING: Audio Device Binding Failed", " Can't open Audio!", 1,__FILE__, __LINE__);
-        print_debug(msg,"debug.log");
-        return ( (void*) 100);
-    }
-    FILE* wav;
-    wav = fopen("bgm2.wav","rb+");
-    if(wav == NULL){
-        msg.makepair(2,0,"In Thread: PCMPLAYING: Can't open Audio File!", " Can't open Audio File!", 1,__FILE__, __LINE__);
-        print_debug(msg,"debug.log");
-        return ( (void*) 100);
-    }
-
-    int pcm_buffer_size = 8192;
-    char *pcm_buffer = (char *) malloc(pcm_buffer_size);
-    int data_count = 0;
-
-    SDL_PauseAudio(0);
-
-    while(true){
-        if(start && !__lock){
-           wav = fopen("bgm.wav","rb+");
-            int pcm_buffer_size = 8192;
-            char *pcm_buffer = (char *) malloc(pcm_buffer_size);
-            int data_count = 0;
-            __lock = true;
-            msg.makepair(0,0,"In Thread: PCMPLAYING: Start Game!(Locked!)","",1,__FILE__,__LINE__);
+    try{
+        SDL_Init(SDL_INIT_AUDIO);
+        SDL_AudioSpec spec;
+        spec.freq = 44100;
+        spec.format = AUDIO_S16SYS;
+        spec.channels = 2;
+        spec.silence = 0;
+        spec.samples = 1024;
+        spec.callback = fill_audio;
+        if(SDL_OpenAudio(&spec, NULL) < 0){
+            msg.makepair(2,0,"In Thread: PCMPLAYING: Audio Device Binding Failed", " Can't open Audio!", 1,__FILE__, __LINE__);
             print_debug(msg,"debug.log");
+            return ( (void*) 100);
         }
-        if(fread(pcm_buffer,1, pcm_buffer_size, wav)!= pcm_buffer_size){
-            fseek(wav,0,SEEK_SET);
-            fread(pcm_buffer,1,pcm_buffer_size,wav);
-            data_count = 0;
+        FILE* wav;
+        wav = fopen("bgm2.wav","rb+");
+        if(wav == NULL){
+            msg.makepair(2,0,"In Thread: PCMPLAYING: Can't open Audio File!", " Can't open Audio File!", 1,__FILE__, __LINE__);
+            print_debug(msg,"debug.log");
+            return ( (void*) 100);
         }
-        msg.makepair(0,0,"In Thread: PCMPLAYING: Now Playing  " + itos(data_count) + "  Bytes Data.", "", 1,__FILE__, __LINE__);
+
+        int pcm_buffer_size = 8192;
+        char *pcm_buffer = (char *) malloc(pcm_buffer_size);
+        data_count = 0;
+
+        SDL_PauseAudio(0);
+
+        while(true){
+            if(start && !__lock){
+                wav = fopen("bgm.wav","rb+");
+                int pcm_buffer_size = 8192;
+                char *pcm_buffer = (char *) malloc(pcm_buffer_size);
+                data_count = 0;
+                __lock = true;
+                msg.makepair(0,0,"In Thread: PCMPLAYING: Start Game!(Locked!)","",1,__FILE__,__LINE__);
+                print_debug(msg,"debug.log");
+            }
+            if(fread(pcm_buffer,1, pcm_buffer_size, wav)!= pcm_buffer_size){
+                fseek(wav,0,SEEK_SET);
+                fread(pcm_buffer,1,pcm_buffer_size,wav);
+                data_count = 0;
+            }
+            msg.makepair(0,0,"In Thread: PCMPLAYING: Now Playing  " + itos(data_count) + "  Bytes Data.", "", 1,__FILE__, __LINE__);
+            print_debug(msg,"debug.log");
+            data_count+=pcm_buffer_size;
+            audio_chunk = (Uint8 *) pcm_buffer;
+            audio_len = pcm_buffer_size;
+            audio_pos = audio_chunk;
+            while(audio_len>0)
+                SDL_Delay(1);
+        }
+        free(pcm_buffer);
+        SDL_Quit();
+        return ( (void*) 100);
+    } catch (exception e){
+        PCMStatus = false;
+        msg.makepair(3,0,"In Thread: PCMPlaying: Error Detected!",e.what(),1,__FILE__,__LINE__);
         print_debug(msg,"debug.log");
-        data_count+=pcm_buffer_size;
-        audio_chunk = (Uint8 *) pcm_buffer;
-        audio_len = pcm_buffer_size;
-        audio_pos = audio_chunk;
-        while(audio_len>0)
-            SDL_Delay(1);
     }
-    free(pcm_buffer);
-    SDL_Quit();
-    return ( (void*) 100);
+
+
 
 }
+void *threadMonitor_debug(void *arg){
+    //pthread_detach(pthread_self());
+    while(1){
+        //pthread_mutex_lock(&__mutex);
+        if(debug_mode){
+            debugStr1 = "Running Time(Thread): "+ itos(cTimer) + "sec" + " Variable:"+itos(SDL_GetTicks())+ "s {2} "+itos(duration);
+            debugStr2 = "UserPos("+itos(posPlayer.x)+","+itos(posPlayer.y)+")   EnemyCount:"+itos(enemy.size())+"  BulletCount: "+itos(bullet.size())+
+                        "  UserBullet: " + itos(userbullet.size());
+            debugStr3 = "ThreadMonitoring: ON   All Bullet:" + itos(HitAll) + "  Hitten: " + itos(HitGet);
+            if(PCMStatus) debugStr4 = "背景音效：正常"; else debugStr4 = "背景音效：异常";
+            int w,h;
+            Image *text3 = textToImage( debugStr1 );
+            Image *text4 = textToImage( debugStr2 );
+            Image *text5 = textToImage( debugStr3 );
+            Image *text6 = textToImage( debugStr4 );
+            getImageSize( text3, w, h );
+            drawImage( text3, 0 , SCREEN_HEIGHT-3*h );
+            cleanup(text3);
 
+            getImageSize( text4, w, h );
+            drawImage( text4, 0 , SCREEN_HEIGHT-4*h );
+            cleanup(text4);
+
+            getImageSize( text5, w, h );
+            drawImage( text5, 0 , SCREEN_HEIGHT-7*h );
+            cleanup(text5);
+            getImageSize( text6, w, h );
+            drawImage( text6, 0 , SCREEN_HEIGHT-5.5*h );
+            cleanup(text6);
+            sleep(1);
+        }
+        /pthread_mutex_unlock(&__mutex);
+    }
+}
 void *TimeCountThread(void *arg){
     pthread_detach(pthread_self());
     while (1){
         cTimer++;
+        sleep(1);
+    }
+}
+void *FileMonitoring(void *arg){
+    pthread_detach(pthread_self());
+    while(1){
+        Message msg2;
+        msg2.makepair(0,0,"=====================New Information==========================","",1,"",0);
+        print_debug(msg2,"monitor.log");
+
+        msg2.makepair(0,0,"Variable Information:","",1,__FILE__,__LINE__);
+        print_debug(msg2,"monitor.log");
+
+        msg2.makepair(0,0,"Vector Size{1}enemy:" + itos(enemy.size()) + " {2}bullet:" + itos(bullet.size()) + " {3}userbullet:" + itos(userbullet.size()),"",1,__FILE__,__LINE__);
+        print_debug(msg2,"monitor.log");
+
+        msg2.makepair(0,0,"Player Point{1}x:" + itos(posPlayer.x) + " {2}y:" + itos(posPlayer.y),"",1,__FILE__,__LINE__);
+        print_debug(msg2,"monitor.log");
+
+        msg2.makepair(0,0,"PCMPlaying: Status "+ (PCMStatus ? itos("Normal") : itos("Error")),"",1,__FILE__,__LINE__);
+        print_debug(msg2,"monitor.log");
+
+        msg2.makepair(0,0,"PCMPlaying: NowPlaying "+ itos(data_count) + " Bytes Data.","",1,__FILE__,__LINE__);
+        print_debug(msg2,"monitor.log");
+
+        msg2.makepair(0,0,"=====================Information End==========================","",1,"",0);
+        print_debug(msg2,"monitor.log");
         sleep(1);
     }
 }
@@ -148,6 +218,12 @@ void initialize()
     err = pthread_create(&timerthread,NULL,TimeCountThread,NULL);
     if(err!=0){
         msg.makepair(3,0,"Can't create pthread TimeCountThread For Error detected.",strerror(err),1,__FILE__, __LINE__);
+        print_debug(msg,"debug.log");
+    }
+
+    err = pthread_create(&fileMonitor,NULL,FileMonitoring,NULL);
+    if(err!=0){
+        msg.makepair(3,0,"Can't create pthread FileMonitoring For Error detected.",strerror(err),1,__FILE__, __LINE__);
         print_debug(msg,"debug.log");
     }
     srand((unsigned int)(time(NULL)));
@@ -443,14 +519,6 @@ void deal()
                 bullet1.pos = posPlayer;
                 userbullet.push_back(bullet1);
                 HitAll++;
-                /*if(!打炮了){
-                    打炮了 = true;
-                    thread 播放子弹轰击音乐(pcmplay, 3);
-                    播放子弹轰击音乐.detach();
-                    打炮了 = false;
-                }*/
-
-                //lastSPACE = duration_i;
             }
         }
 
