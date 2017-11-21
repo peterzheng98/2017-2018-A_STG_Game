@@ -3,7 +3,6 @@
 #include "UserDefined.h"
 
 #include <unistd.h>
-
 //#define DEBUG_MODE
 #define _LIMIT_WIDTH SCREEN_WIDTH
 #define _LIMIT_HEIGHT SCREEN_HEIGHT
@@ -48,6 +47,85 @@ double speedPlayer;
 int cTimer = 0, Timer = 0;
 Image *imagePlayer, *imageBullet, *imageEnemy,*imageCur, *images[100];
 Image *GameOver;
+void sigABRTHandler(int signum){
+
+    _game_over = true;
+    std::cerr << "Executive Error: Receive Signal SIGABRT." << std::endl;
+    std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
+
+    Message msg2p;
+    msg2p.makepair(3,0,"Executive Error: Receive Signal SIGABRT.","SIGABRT",1,__FILE__,__LINE__);
+    print_debug(msg2p, "debug.log");
+
+    sleep(3);
+
+    //finale();
+    exit(signum);
+}
+
+void sigINTHandler(int signum){
+
+    _game_over = true;
+    std::cerr << "Executive Error: Receive Signal SIGINT : " << signum << std::endl;
+    std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
+
+    Message msg2p;
+    msg2p.makepair(3,0,"Executive Error: Receive Signal SIGINT:"+itos(signum),"SIGINT" + itos(signum),1,__FILE__,__LINE__);
+    print_debug(msg2p, "debug.log");
+
+    sleep(3);
+
+    //finale();
+    exit(signum);
+}
+
+void sigSEGVHandler(int signum){
+
+    _game_over = true;
+    std::cerr << "Executive Error: Receive Signal SIGSEGV." << std::endl;
+    std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
+
+    Message msg2p;
+    msg2p.makepair(3,0,"Executive Error: Receive Signal SIGSEGV.","SIGSEGV",1,__FILE__,__LINE__);
+    print_debug(msg2p, "debug.log");
+
+    sleep(3);
+
+    //finale();
+    exit(signum);
+}
+
+void sigFPEHandler(int signum){
+
+    _game_over = true;
+    std::cerr << "Executive Error: Receive Signal SIGFPE." << std::endl;
+    std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
+
+    Message msg2p;
+    msg2p.makepair(3,0,"Executive Error: Receive Signal SIGFPE.","SIGFPE",1,__FILE__,__LINE__);
+    print_debug(msg2p, "debug.log");
+
+    sleep(3);
+
+    //finale();
+    exit(signum);
+}
+
+void sigILLHandler(int signum){
+
+    _game_over = true;
+    std::cerr << "Executive Error: Receive Signal SIGILL." << std::endl;
+    std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
+
+    Message msg2p;
+    msg2p.makepair(3,0,"Executive Error: Receive Signal SIGILL.","SIGILL",1,__FILE__,__LINE__);
+    print_debug(msg2p, "debug.log");
+
+    sleep(3);
+
+    //finale();
+    exit(signum);
+}
 void loadPictures()
 {
     imagePlayer = loadImage( "player.png"	);
@@ -57,9 +135,10 @@ void loadPictures()
     GameOver = loadImage("red_strip24.png");
 }
 FILE *dbg;
+bool firstStart = true;
 bool PCMStatus = false;
 Message msg;
-pthread_t bgmthread, timerthread, fileMonitor;
+pthread_t bgmthread, timerthread, fileMonitor, threadMonitor;
 void fill_audio(void *udata,Uint8 *stream,int len){
     //SDL 2.0
     SDL_memset(stream, 0, len);
@@ -140,7 +219,7 @@ void *pcmplay(void *arg){
 
 }
 void *threadMonitor_debug(void *arg){
-    //pthread_detach(pthread_self());
+    pthread_detach(pthread_self());
     while(1){
         //pthread_mutex_lock(&__mutex);
         if(debug_mode){
@@ -170,7 +249,7 @@ void *threadMonitor_debug(void *arg){
             cleanup(text6);
             sleep(1);
         }
-        /pthread_mutex_unlock(&__mutex);
+        //pthread_mutex_unlock(&__mutex);
     }
 }
 void *TimeCountThread(void *arg){
@@ -209,6 +288,18 @@ void *FileMonitoring(void *arg){
 }
 void initialize()
 {
+    if(firstStart){
+        signal(SIGINT,sigINTHandler);
+        signal(SIGABRT,sigABRTHandler);
+        signal(SIGFPE,sigFPEHandler);
+        signal(SIGILL,sigILLHandler);
+        signal(SIGSEGV,sigSEGVHandler);
+        firstStart = false;
+    }
+
+
+    HitAll = 0;
+    HitGet = 0;
     int err = pthread_create(&bgmthread,NULL,pcmplay,NULL);
     if(err!=0){
         msg.makepair(3,0,"Can't create pthread BGMplaying For Error detected.",strerror(err),1,__FILE__, __LINE__);
@@ -267,7 +358,6 @@ void initialize()
     hp = 5; bump = 3;
     score = 0;
 }
-
 void drawPlayer()
 {
     if(!_game_over){
@@ -673,8 +763,8 @@ int work( bool &quit )
                     /*    BGM Sound : ON     Sound : Error(com.apple.audiokit)"*/;
                 debugStr2 = "用户坐标("+itos(posPlayer.x)+","+itos(posPlayer.y)+")     敌机计数:"+itos(enemy.size())+"  子弹数: "+itos(bullet.size())+
                             "  用户子弹数: " + itos(userbullet.size());
-                debugStr3 = "线程监控系统：启动（简易模式）  总发出子弹：" + itos(HitAll) + "  打中子弹：" + itos(HitGet);
-                debugStr4 = "背景音效:正常|音效:ERROR(11,EXC_BAD_ACCESS Crash:com.apple.audio.IOThread.client)";
+                debugStr3 = "监控系统：启动（简易监控）  总发出子弹：" + itos(HitAll) + "  打中子弹：" + itos(HitGet);
+                debugStr4 = "BGM:" + (PCMStatus ? itos("正常") : itos("异常"));
             }
             scoreStr = "Your Score: " + itos(score)/* + "      Running Time(Thread): "+ itos(cTimer) + "  Seconds" + "  (Variable)duration: "+itos(duration)+"  Seconds."+ "     广告：澳门首家线上赌场上线了！"*/;
             if(score > 20 && score < 40) Hp_bumpStr += "   是不是觉得有些简单？我们再来一些！";
