@@ -5,7 +5,7 @@
 #ifndef STG_GAME_COMMONINCLUDE_H
 #define STG_GAME_COMMONINCLUDE_H
 
-enum flight{
+enum flight {
     Enemy,
     Boss,
     Friend,
@@ -35,5 +35,6 @@ const int _HP_Friend = 10;
 #include <vector>
 //#include <pthread>
 #include <unistd.h>
+
 using namespace std;
 

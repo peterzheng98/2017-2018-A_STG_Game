@@ -5,24 +5,24 @@
 #ifndef STG_GAME_TIMERINTERVAL_H
 #define STG_GAME_TIMERINTERVAL_H
 
-class TimerInterval{
+class TimerInterval {
 public:
-    void New(int p, bool current){
+    void New(int p, bool current) {
         TSec = p;
         Current = current;
     }
 
-    void SetTime(int curSec){
+    void SetTime(int curSec) {
         CurSec = curSec;
         Delta = CurSec - TSec;
     }
 
-    void SetInterval(int interval){
+    void SetInterval(int interval) {
         Interval = interval;
     }
 
-    bool Check(){
-        if(Delta % Interval == 0)
+    bool Check() {
+        if (Delta % Interval == 0)
             return true;
         else
             return false;
@@ -33,13 +33,13 @@ private:
     bool Current;
 };
 
-class CountingInterval{
+class CountingInterval {
 public:
-    void Start(int p){
+    void Start(int p) {
         Tsec = p;
     }
 
-    bool Check(){
+    bool Check() {
 
     }
 
@@ -47,4 +47,5 @@ private:
     int CurSec, Tsec;
     bool Current;
 };
+
 #endif //STG_GAME_TIMERINTERVAL_H

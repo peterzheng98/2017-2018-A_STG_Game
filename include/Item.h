@@ -6,11 +6,13 @@
 #define STG_GAME_ITEM_H
 
 #include "SDL2_header.h"
+
 #endif //STG_GAME_ITEM_H
 
 #include "CommonInclude.h"
 
 #include "pointd.h"
+
 struct Flight {
     flight kind;
     int hp;
@@ -20,10 +22,12 @@ struct Flight {
     PointD areacode;
     int velocity;
     uint64_t OccurTime, interval;
-    void getAreaCode(){
+
+    void getAreaCode() {
         areacode.x = pos.x / 128;
         areacode.y = pos.y / 96;
     }
+
     void newenemy() {
         kind = Enemy;
         hp = _HP_Enemy;
@@ -33,19 +37,33 @@ struct Flight {
         OccurTime = Game::duration_i;
     };
 };
+
 struct Bullet {
     PointD pos;
-    int trace;
     // 1 = 圆心散开  2 = 尾随我方飞机 3 = 竖直飞
     int velocity;
     int user;
     //1 = 敌机
     bool avail;
     PointD areacode;
-    void getAreaCode(){
+
+    void getAreaCode() {
         areacode.x = pos.x / 128;
         areacode.y = pos.y / 96;
     }
+};
+
+struct BulletCurve{
+    PointD pos;
+    double angle;
+    int velocity;
+    int user;
+};
+
+struct BulletCircle{
+    PointD pos;
+    int velocity;
+    int user;
 };
 struct obj {
     int kind;
