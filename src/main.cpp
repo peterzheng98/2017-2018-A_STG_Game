@@ -693,7 +693,6 @@ void drawEnemy() {
             }
         }
 
-                bulletCurve.push_back(bulletCurvetmp);
         if(score > 10){
             for (int j = 0; j < len; ++j) {
                 if ((duration_i - enemy[j].OccurTime) % (enemy[j].interval * 2) == 0) {
