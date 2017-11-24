@@ -57,17 +57,36 @@ struct StopAnimation {
 
 vector<StopAnimation> stopAnimation;
 
+inline void ClearScreenObject() {
+    std::vector<Bullet> bullet1;
+    bullet = bullet1;
+    std::vector<Flight> enemy1;
+    enemy = enemy1;
+    std::vector<Bullet> bullet3;
+    userbullet = bullet3;
+    std::vector<BulletCurve> bullet4;
+    bulletCurve = bullet4;
+}
+
 void sigABRTHandler(int signum) {
 
     _game_over = true;
     std::cerr << "Executive Error: Receive Signal SIGABRT." << std::endl;
-    std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
+    //std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
 
     Message msg2p;
     msg2p.makepair(3, 0, "Executive Error: Receive Signal SIGABRT.", "SIGABRT", 1, __FILE__, __LINE__);
     print_debug(msg2p, "debug.log");
+    print_debug(msg2p,"monitor.log");
 
-    sleep(3);
+    SDL_Quit();
+
+    std::cout << "\nYour Score is " << score << std::endl;
+    std::cout << std::endl;
+    std::cout << "Press Number 1 and Enter To Exit." << std::endl;
+    int __exit;
+    std::cin >>  __exit;
+
 
     //finale();
     exit(signum);
@@ -77,15 +96,22 @@ void sigINTHandler(int signum) {
 
     _game_over = true;
     std::cerr << "Executive Error: Receive Signal SIGINT : " << signum << std::endl;
-    std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
+    //std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
 
     Message msg2p;
     msg2p.makepair(3, 0, "Executive Error: Receive Signal SIGINT:" + itos(signum), "SIGINT" + itos(signum), 1, __FILE__,
                    __LINE__);
     print_debug(msg2p, "debug.log");
 
-    sleep(3);
+    print_debug(msg2p,"monitor.log");
 
+    SDL_Quit();
+
+    std::cout << "\nYour Score is " << score << std::endl;
+    std::cout << std::endl;
+    std::cout << "Press Number 1 and Enter To Exit." << std::endl;
+    int __exit;
+    std::cin >>  __exit;
     //finale();
     exit(signum);
 }
@@ -94,14 +120,21 @@ void sigSEGVHandler(int signum) {
 
     _game_over = true;
     std::cerr << "Executive Error: Receive Signal SIGSEGV." << std::endl;
-    std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
+    //std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
 
     Message msg2p;
     msg2p.makepair(3, 0, "Executive Error: Receive Signal SIGSEGV.", "SIGSEGV", 1, __FILE__, __LINE__);
     print_debug(msg2p, "debug.log");
 
-    sleep(3);
+    print_debug(msg2p,"monitor.log");
 
+    SDL_Quit();
+
+    std::cout << "\nYour Score is " << score << std::endl;
+    std::cout << std::endl;
+    std::cout << "Press Number 1 and Enter To Exit." << std::endl;
+    int __exit;
+    std::cin >>  __exit;
     //finale();
     exit(signum);
 }
@@ -110,14 +143,21 @@ void sigFPEHandler(int signum) {
 
     _game_over = true;
     std::cerr << "Executive Error: Receive Signal SIGFPE." << std::endl;
-    std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
+    //std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
 
     Message msg2p;
     msg2p.makepair(3, 0, "Executive Error: Receive Signal SIGFPE.", "SIGFPE", 1, __FILE__, __LINE__);
     print_debug(msg2p, "debug.log");
 
-    sleep(3);
+    print_debug(msg2p,"monitor.log");
 
+    SDL_Quit();
+
+    std::cout << "\nYour Score is " << score << std::endl;
+    std::cout << std::endl;
+    std::cout << "Press Number 1 and Enter To Exit." << std::endl;
+    int __exit;
+    std::cin >>  __exit;
     //finale();
     exit(signum);
 }
@@ -125,15 +165,22 @@ void sigFPEHandler(int signum) {
 void sigILLHandler(int signum) {
 
     _game_over = true;
-    std::cerr << "Executive Error: Receive Signal SIGILL." << std::endl;
-    std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
+    std::cerr << "\nExecutive Error: Receive Signal SIGILL." << std::endl;
+    //std::cerr << "Program will STOP in 3 seconds.........." << std::endl;
 
     Message msg2p;
     msg2p.makepair(3, 0, "Executive Error: Receive Signal SIGILL.", "SIGILL", 1, __FILE__, __LINE__);
     print_debug(msg2p, "debug.log");
 
-    sleep(3);
+    print_debug(msg2p,"monitor.log");
 
+    SDL_Quit();
+
+    std::cout << "\nYour Score is " << score << std::endl;
+    std::cout << std::endl;
+    std::cout << "Press Number 1 and Enter To Exit." << std::endl;
+    int __exit;
+    std::cin >>  __exit;
     //finale();
     exit(signum);
 }
@@ -422,11 +469,13 @@ void drawPlayer() {
             bullet1.pos.y = enemytmp.pos.y;
             bullet1.velocity = rand() % 12 + 5;
             bullet1.user = 1;
-            BulletCurve bulletCurve1;
-            bulletCurve1.pos.x = enemytmp.pos.x;
-            bulletCurve1.pos.y = enemytmp.pos.y;
-            bulletCurve1.velocity = 5;
-            bulletCurve1.angle = atan((enemytmp.pos.y - posPlayer.y) / (enemytmp.pos.x - posPlayer.x));
+            if (score > 20) {
+                BulletCurve bulletCurve1;
+                bulletCurve1.pos.x = enemytmp.pos.x;
+                bulletCurve1.pos.y = enemytmp.pos.y;
+                bulletCurve1.velocity = 8;
+                bulletCurve1.angle = atan((enemytmp.pos.y - posPlayer.y) / (enemytmp.pos.x - posPlayer.x));
+            }
             msg.makepair(0, 0, "New enemy: position(" + itos(enemytmp.pos.x) + "," + itos(enemytmp.pos.y) + ")", "", 1,
                          __FILE__, __LINE__);
             print_debug(msg, "debug.log");
@@ -644,17 +693,19 @@ void drawEnemy() {
             }
         }
 
-        for (int j = 0; j < len; ++j) {
-            if ((duration_i - enemy[j].OccurTime) % enemy[j].interval == 0) {
-                BulletCurve bulletCurvetmp;
-                bulletCurvetmp.pos = enemy[j].pos;
-                bulletCurvetmp.velocity = 5;
-                bulletCurvetmp.angle = atan((enemy[j].pos.y - posPlayer.y) / (enemy[j].pos.x - posPlayer.x));
                 bulletCurve.push_back(bulletCurvetmp);
+        if(score > 10){
+            for (int j = 0; j < len; ++j) {
+                if ((duration_i - enemy[j].OccurTime) % (enemy[j].interval * 2) == 0) {
+                    BulletCurve bulletCurvetmp;
+                    bulletCurvetmp.pos = enemy[j].pos;
+                    bulletCurvetmp.velocity = 5;
+                    bulletCurvetmp.angle = atan((enemy[j].pos.y - posPlayer.y) / (enemy[j].pos.x - posPlayer.x));
+                    bulletCurve.push_back(bulletCurvetmp);
+                }
             }
         }
     }
-    //drawImage( imageEnemy, posEnemy[0].x-w/2, posEnemy[0].y-h/2 );
 }
 
 void draw() {
@@ -685,14 +736,8 @@ void deal() {
                 sa.firstLoad = true;
                 stopAnimation.push_back(sa);
             }
-            std::vector<Bullet> bullet1;
-            bullet = bullet1;
-            std::vector<Flight> enemy1;
-            enemy = enemy1;
-            std::vector<Bullet> bullet3;
-            userbullet = bullet3;
-            std::vector<BulletCurve> bullet4;
-            bulletCurve = bullet4;
+            score += enemy.size();
+            ClearScreenObject();
             bump--;
             Skill_CD = duration + 2;
             return;
@@ -740,12 +785,7 @@ void deal() {
                 score++;
                 hp--;
                 bump = 3;
-                std::vector<Bullet> bullet1;
-                bullet = bullet1;
-                std::vector<Flight> enemy1;
-                enemy = enemy1;
-                std::vector<Bullet> bullet3;
-                userbullet = bullet3;
+                ClearScreenObject();
                 break;
             }
         }
@@ -808,14 +848,7 @@ void deal() {
                 stopAnimation.push_back(sa);
                 hp--;
                 bump = 3;
-                std::vector<Bullet> bullet1;
-                bullet = bullet1;
-                std::vector<Flight> enemy1;
-                enemy = enemy1;
-                std::vector<Bullet> bullet3;
-                userbullet = bullet3;
-                std::vector<BulletCurve> bullet4;
-                bulletCurve = bullet4;
+                ClearScreenObject();
                 break;
             }
         }
@@ -834,14 +867,7 @@ void deal() {
                 stopAnimation.push_back(sa);
                 hp--;
                 bump = 3;
-                std::vector<Bullet> bullet1;
-                bullet = bullet1;
-                std::vector<Flight> enemy1;
-                enemy = enemy1;
-                std::vector<Bullet> bullet3;
-                userbullet = bullet3;
-                std::vector<BulletCurve> bullet4;
-                bulletCurve = bullet4;
+                ClearScreenObject();
                 break;
             }
         }
@@ -854,7 +880,7 @@ void deal() {
         //Calculate new position
         posPlayer = posPlayer + velocityPlayer;
 
-        //判定是否边界。Flag = 5
+        //判定是否边界。
         int w, h;
         getImageSize(imagePlayer, w, h);
         posPlayer.x = posPlayer.x + w / 2 > _LIMIT_WIDTH ? _LIMIT_WIDTH - w / 2 : posPlayer.x;
