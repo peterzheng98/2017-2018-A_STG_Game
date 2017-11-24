@@ -6,6 +6,7 @@
 //#define DEBUG_MODE
 #define _LIMIT_WIDTH SCREEN_WIDTH
 #define _LIMIT_HEIGHT SCREEN_HEIGHT
+#define PI acos(-1)
 using namespace Game;
 double rate = 0;
 int HitAll = 0;
@@ -40,12 +41,13 @@ std::vector<Flight> enemy;
 std::vector<Bullet> bullet;
 std::vector<Bullet> userbullet;
 std::vector<BulletCurve> bulletCurve;
+std::vector<UserBulletCurve> userBulletCurve;
 PointD posPlayer, velocityPlayer;
 PointD posEnemy[10];
 int enemyNumber, imageNumber;
 double speedPlayer;
 int cTimer = 0, Timer = 0;
-Image *imagePlayer, *imageBullet, *imageBulletCurve, *imageEnemy, *imageCur, *images[100];
+Image *imagePlayer, *imageBullet, *imageBulletCurve, *imageBulletCurveUser, *imageEnemy, *imageCur, *images[100];
 Image *GameOver;
 
 struct StopAnimation {
@@ -66,6 +68,8 @@ inline void ClearScreenObject() {
     userbullet = bullet3;
     std::vector<BulletCurve> bullet4;
     bulletCurve = bullet4;
+    std::vector<UserBulletCurve> bullet5;
+    userBulletCurve = bullet5;
 }
 
 void sigABRTHandler(int signum) {
@@ -77,7 +81,7 @@ void sigABRTHandler(int signum) {
     Message msg2p;
     msg2p.makepair(3, 0, "Executive Error: Receive Signal SIGABRT.", "SIGABRT", 1, __FILE__, __LINE__);
     print_debug(msg2p, "debug.log");
-    print_debug(msg2p,"monitor.log");
+    print_debug(msg2p, "monitor.log");
 
     SDL_Quit();
 
@@ -85,7 +89,7 @@ void sigABRTHandler(int signum) {
     std::cout << std::endl;
     std::cout << "Press Number 1 and Enter To Exit." << std::endl;
     int __exit;
-    std::cin >>  __exit;
+    std::cin >> __exit;
 
 
     //finale();
@@ -103,7 +107,7 @@ void sigINTHandler(int signum) {
                    __LINE__);
     print_debug(msg2p, "debug.log");
 
-    print_debug(msg2p,"monitor.log");
+    print_debug(msg2p, "monitor.log");
 
     SDL_Quit();
 
@@ -111,7 +115,7 @@ void sigINTHandler(int signum) {
     std::cout << std::endl;
     std::cout << "Press Number 1 and Enter To Exit." << std::endl;
     int __exit;
-    std::cin >>  __exit;
+    std::cin >> __exit;
     //finale();
     exit(signum);
 }
@@ -126,7 +130,7 @@ void sigSEGVHandler(int signum) {
     msg2p.makepair(3, 0, "Executive Error: Receive Signal SIGSEGV.", "SIGSEGV", 1, __FILE__, __LINE__);
     print_debug(msg2p, "debug.log");
 
-    print_debug(msg2p,"monitor.log");
+    print_debug(msg2p, "monitor.log");
 
     SDL_Quit();
 
@@ -134,7 +138,7 @@ void sigSEGVHandler(int signum) {
     std::cout << std::endl;
     std::cout << "Press Number 1 and Enter To Exit." << std::endl;
     int __exit;
-    std::cin >>  __exit;
+    std::cin >> __exit;
     //finale();
     exit(signum);
 }
@@ -149,7 +153,7 @@ void sigFPEHandler(int signum) {
     msg2p.makepair(3, 0, "Executive Error: Receive Signal SIGFPE.", "SIGFPE", 1, __FILE__, __LINE__);
     print_debug(msg2p, "debug.log");
 
-    print_debug(msg2p,"monitor.log");
+    print_debug(msg2p, "monitor.log");
 
     SDL_Quit();
 
@@ -157,7 +161,7 @@ void sigFPEHandler(int signum) {
     std::cout << std::endl;
     std::cout << "Press Number 1 and Enter To Exit." << std::endl;
     int __exit;
-    std::cin >>  __exit;
+    std::cin >> __exit;
     //finale();
     exit(signum);
 }
@@ -172,7 +176,7 @@ void sigILLHandler(int signum) {
     msg2p.makepair(3, 0, "Executive Error: Receive Signal SIGILL.", "SIGILL", 1, __FILE__, __LINE__);
     print_debug(msg2p, "debug.log");
 
-    print_debug(msg2p,"monitor.log");
+    print_debug(msg2p, "monitor.log");
 
     SDL_Quit();
 
@@ -180,7 +184,7 @@ void sigILLHandler(int signum) {
     std::cout << std::endl;
     std::cout << "Press Number 1 and Enter To Exit." << std::endl;
     int __exit;
-    std::cin >>  __exit;
+    std::cin >> __exit;
     //finale();
     exit(signum);
 }
@@ -191,6 +195,7 @@ void loadPictures() {
     imageBulletCurve = loadImage("imagebulletcurve.png");
     imageEnemy = loadImage("player_u.png");
     imageCur = loadImage("cur.png");
+    imageBulletCurveUser = loadImage("imagebulletcurveuser.png");
     GameOver = loadImage("red_strip24.png");
 }
 
@@ -342,7 +347,14 @@ void *FileMonitoring(void *arg) {
 
         msg2.makepair(0, 0, "Vector Size{1}enemy:" + itos(enemy.size()) + " {2}bullet:" + itos(bullet.size()) +
                             " {3}userbullet:" + itos(userbullet.size()) + "  {4}stopAnimation:" +
-                            itos(stopAnimation.size()), "", 1, __FILE__, __LINE__);
+                            itos(stopAnimation.size()) + "  {5}userBulletCurve:" + itos(userBulletCurve.size()) +
+                            "  {6}BulletCurve:" + itos(bulletCurve.size()), "", 1, __FILE__, __LINE__);
+        print_debug(msg2, "monitor.log");
+
+        msg2.makepair(0, 0, "Vector Address{1}enemy:" + itos(&enemy) + " {2}bullet:" + itos(&bullet) +
+                            " {3}userbullet:" + itos(&userbullet) + "  {4}stopAnimation:" +
+                            itos(&stopAnimation) + "  {5}userBulletCurve:" + itos(&userBulletCurve) +
+                            "  {6}BulletCurve:" + itos(&bulletCurve), "", 1, __FILE__, __LINE__);
         print_debug(msg2, "monitor.log");
 
         msg2.makepair(0, 0, "Player Point{1}x:" + itos(posPlayer.x) + " {2}y:" + itos(posPlayer.y), "", 1, __FILE__,
@@ -611,6 +623,11 @@ void drawBullet() {
         int len3 = bulletCurve.size();
         for (int j = 0; j < len3; j++)
             drawImage(imageBulletCurve, bulletCurve[j].pos.x - w / 2, bulletCurve[j].pos.y - h / 2);
+
+        int len4 = userBulletCurve.size();
+        for (int j = 0; j < len4; j++) {
+            drawImage(imageBulletCurveUser, userBulletCurve[j].pos.x - w / 2, userBulletCurve[j].pos.y - h / 2);
+        }
         len = bullet.size();
         for (int i = 0; i < len; i++) {
             bullet[i].pos.y += bullet[i].velocity;
@@ -633,6 +650,11 @@ void drawBullet() {
         for (int i = 0; i < len; i++) {
             bulletCurve[i].pos.x += sin(bulletCurve[i].angle) * bulletCurve[i].velocity;
             bulletCurve[i].pos.y += cos(bulletCurve[i].angle) * bulletCurve[i].velocity;
+        }
+        len = userBulletCurve.size();
+        for (int i = 0; i < len; i++) {
+            userBulletCurve[i].pos.x += sin(userBulletCurve[i].angle) * userBulletCurve[i].velocity;
+            userBulletCurve[i].pos.y += cos(userBulletCurve[i].angle) * userBulletCurve[i].velocity;
         }
         len2 = userbullet.size();
         for (int i = 0; i < len2; ++i) {
@@ -658,6 +680,18 @@ void drawBullet() {
                 len3--;
             }
         }
+
+        len4 = userBulletCurve.size();
+        for (int i = 0; i < len4; i++) {
+            if (userBulletCurve[i].pos.x < 0 || userBulletCurve[i].pos.x > Game::SCREEN_WIDTH ||
+                userBulletCurve[i].pos.y < 0 || userBulletCurve[i].pos.y > Game::SCREEN_HEIGHT) {
+                userBulletCurve.erase(userBulletCurve.begin() + i);
+                i--;
+                len4--;
+            }
+        }
+
+
     }
 }
 
@@ -693,7 +727,7 @@ void drawEnemy() {
             }
         }
 
-        if(score > 10){
+        if (score > 10) {
             for (int j = 0; j < len; ++j) {
                 if ((duration_i - enemy[j].OccurTime) % (enemy[j].interval * 2) == 0) {
                     BulletCurve bulletCurvetmp;
@@ -765,6 +799,19 @@ void deal() {
                 bullet1.pos = posPlayer;
                 userbullet.push_back(bullet1);
                 HitAll++;
+                if (score > 40) {
+                    UserBulletCurve userBulletCurve1;
+                    userBulletCurve1.velocity = -7;
+                    userBulletCurve1.pos = posPlayer;
+                    userBulletCurve1.angle = PI / 4;
+                    userBulletCurve.push_back(userBulletCurve1);
+                    HitAll++;
+                    userBulletCurve1.velocity = -7;
+                    userBulletCurve1.pos = posPlayer;
+                    userBulletCurve1.angle = (-PI / 4);
+                    userBulletCurve.push_back(userBulletCurve1);
+                    HitAll++;
+                }
             }
         }
 
@@ -827,6 +874,28 @@ void deal() {
                     sa.firstLoad = true;
                     stopAnimation.push_back(sa);
                     userbullet.erase(userbullet.begin() + i);
+                    HitGet++;
+                    i--;
+                    enemy.erase(enemy.begin() + j);
+                    j--;
+                }
+            }
+        }
+
+        for (int i = 0; i < userBulletCurve.size(); i++) {
+            for (int j = 0; j < enemy.size(); ++j) {
+                if ((abs(enemy[j].pos.x - userBulletCurve[i].pos.x)) < (imagew / 4) &&
+                    abs(enemy[j].pos.y - userBulletCurve[i].pos.y) < (imageh / 4)) {
+                    score++;
+                    StopAnimation sa;
+                    sa.pos = enemy[j].pos;
+                    sa.pos.x -= imagew / 2;
+                    sa.pos.y -= imageh / 2;
+                    sa.frame = 0;
+                    sa.NextStart = duration;
+                    sa.firstLoad = true;
+                    stopAnimation.push_back(sa);
+                    userBulletCurve.erase(userBulletCurve.begin() + i);
                     HitGet++;
                     i--;
                     enemy.erase(enemy.begin() + j);

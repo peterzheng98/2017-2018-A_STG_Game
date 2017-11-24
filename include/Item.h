@@ -60,6 +60,12 @@ struct BulletCurve{
     int user;
 };
 
+struct UserBulletCurve{
+    PointD pos;
+    double angle;
+    int velocity;
+    int user;
+};
 struct BulletCircle{
     PointD pos;
     int velocity;
