@@ -1023,7 +1023,7 @@ int work(bool &quit) {
             Hp_bumpStr = "HP: " + itos(hp) + "       Skill : " + itos(bump) + "     ";
             if (debug_mode) {
                 debugStr1 = "运行时间(线程返回): " + itos(cTimer) + "  秒" + "  (变量返回): {1}" + itos(SDL_GetTicks()) + "秒 {2} " +
-                            itos(duration) + " 秒  (系统返回): " + itos(cTimer) + "秒"
+                            itos(duration) + " 秒"
                     /*    BGM Sound : ON     Sound : Error(com.apple.audiokit)"*/;
                 debugStr2 = "用户坐标(" + itos(posPlayer.x) + "," + itos(posPlayer.y) + ")     敌机计数:" + itos(enemy.size()) +
                             "  子弹数: " + itos(bullet.size()) +
