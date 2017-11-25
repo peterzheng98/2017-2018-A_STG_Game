@@ -38,3 +38,459 @@
 [2017-11-24 22:41:58]:[RunTime: 5 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
 [2017-11-24 22:41:58]:[RunTime: 5 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 286720 Bytes Data.
 [2017-11-24 22:41:58]:[RunTime: 5 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:17]:[RunTime: 1 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:17]:[RunTime: 1 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:17]:[RunTime: 1 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:0 {2}bullet:0 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:17]:[RunTime: 1 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:17]:[RunTime: 1 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:512 {2}y:384
+[2017-11-25 10:14:17]:[RunTime: 1 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:17]:[RunTime: 1 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 0 Bytes Data.
+[2017-11-25 10:14:17]:[RunTime: 1 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:18]:[RunTime: 2 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:18]:[RunTime: 2 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:18]:[RunTime: 2 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:0 {2}bullet:0 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:18]:[RunTime: 2 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:18]:[RunTime: 2 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:512 {2}y:384
+[2017-11-25 10:14:18]:[RunTime: 2 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:18]:[RunTime: 2 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 131072 Bytes Data.
+[2017-11-25 10:14:18]:[RunTime: 2 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:19]:[RunTime: 3 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:19]:[RunTime: 3 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:19]:[RunTime: 3 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:0 {2}bullet:0 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:19]:[RunTime: 3 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:19]:[RunTime: 3 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:537 {2}y:384
+[2017-11-25 10:14:19]:[RunTime: 3 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:19]:[RunTime: 3 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 16384 Bytes Data.
+[2017-11-25 10:14:19]:[RunTime: 3 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:20]:[RunTime: 4 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:20]:[RunTime: 4 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:20]:[RunTime: 4 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:4 {2}bullet:19 {3}userbullet:7  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:20]:[RunTime: 4 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:20]:[RunTime: 4 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:422.319 {2}y:484.392
+[2017-11-25 10:14:20]:[RunTime: 4 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:20]:[RunTime: 4 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 188416 Bytes Data.
+[2017-11-25 10:14:20]:[RunTime: 4 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:21]:[RunTime: 5 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:21]:[RunTime: 5 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:21]:[RunTime: 5 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:7 {2}bullet:80 {3}userbullet:13  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:21]:[RunTime: 5 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:21]:[RunTime: 5 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:339.74 {2}y:515.885
+[2017-11-25 10:14:21]:[RunTime: 5 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:21]:[RunTime: 5 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 368640 Bytes Data.
+[2017-11-25 10:14:21]:[RunTime: 5 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:22]:[RunTime: 6 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:22]:[RunTime: 6 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:22]:[RunTime: 6 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:9 {2}bullet:95 {3}userbullet:17  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:22]:[RunTime: 6 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:22]:[RunTime: 6 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:424.247 {2}y:515.885
+[2017-11-25 10:14:22]:[RunTime: 6 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:22]:[RunTime: 6 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 548864 Bytes Data.
+[2017-11-25 10:14:22]:[RunTime: 6 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:23]:[RunTime: 7 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:23]:[RunTime: 7 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:23]:[RunTime: 7 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:10 {2}bullet:102 {3}userbullet:17  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:23]:[RunTime: 7 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:23]:[RunTime: 7 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:452.327 {2}y:515.885
+[2017-11-25 10:14:23]:[RunTime: 7 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:23]:[RunTime: 7 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 720896 Bytes Data.
+[2017-11-25 10:14:23]:[RunTime: 7 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:24]:[RunTime: 8 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:24]:[RunTime: 8 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:24]:[RunTime: 8 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:9 {2}bullet:95 {3}userbullet:17  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:24]:[RunTime: 8 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:24]:[RunTime: 8 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:398.251 {2}y:515.885
+[2017-11-25 10:14:24]:[RunTime: 8 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:24]:[RunTime: 8 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 901120 Bytes Data.
+[2017-11-25 10:14:24]:[RunTime: 8 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:25]:[RunTime: 9 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:25]:[RunTime: 9 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:25]:[RunTime: 9 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:2 {2}bullet:6 {3}userbullet:3  {4}stopAnimation:1  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:25]:[RunTime: 9 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:25]:[RunTime: 9 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:528.251 {2}y:515.885
+[2017-11-25 10:14:25]:[RunTime: 9 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:25]:[RunTime: 9 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 1081344 Bytes Data.
+[2017-11-25 10:14:25]:[RunTime: 9 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:26]:[RunTime: 10 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:26]:[RunTime: 10 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:26]:[RunTime: 10 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:5 {2}bullet:42 {3}userbullet:12  {4}stopAnimation:1  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:26]:[RunTime: 10 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:26]:[RunTime: 10 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:828.251 {2}y:515.885
+[2017-11-25 10:14:26]:[RunTime: 10 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:26]:[RunTime: 10 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 1253376 Bytes Data.
+[2017-11-25 10:14:26]:[RunTime: 10 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:27]:[RunTime: 11 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:27]:[RunTime: 11 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:27]:[RunTime: 11 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:4 {2}bullet:50 {3}userbullet:14  {4}stopAnimation:3  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:27]:[RunTime: 11 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:27]:[RunTime: 11 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:929.176 {2}y:515.885
+[2017-11-25 10:14:27]:[RunTime: 11 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:27]:[RunTime: 11 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 1433600 Bytes Data.
+[2017-11-25 10:14:27]:[RunTime: 11 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:28]:[RunTime: 12 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:28]:[RunTime: 12 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:28]:[RunTime: 12 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:4 {2}bullet:20 {3}userbullet:10  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:28]:[RunTime: 12 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:28]:[RunTime: 12 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:744.626 {2}y:515.885
+[2017-11-25 10:14:28]:[RunTime: 12 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:28]:[RunTime: 12 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 1613824 Bytes Data.
+[2017-11-25 10:14:28]:[RunTime: 12 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:29]:[RunTime: 13 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:29]:[RunTime: 13 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:29]:[RunTime: 13 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:2 {2}bullet:7 {3}userbullet:3  {4}stopAnimation:5  {5}userBulletCurve:0  {6}BulletCurve:3
+[2017-11-25 10:14:29]:[RunTime: 13 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:29]:[RunTime: 13 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:979 {2}y:515.885
+[2017-11-25 10:14:29]:[RunTime: 13 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:29]:[RunTime: 13 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 1785856 Bytes Data.
+[2017-11-25 10:14:29]:[RunTime: 13 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:30]:[RunTime: 14 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:30]:[RunTime: 14 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:30]:[RunTime: 14 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:6 {2}bullet:78 {3}userbullet:13  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:37
+[2017-11-25 10:14:30]:[RunTime: 14 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:30]:[RunTime: 14 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:879.45 {2}y:515.885
+[2017-11-25 10:14:30]:[RunTime: 14 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:30]:[RunTime: 14 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 1966080 Bytes Data.
+[2017-11-25 10:14:30]:[RunTime: 14 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:31]:[RunTime: 15 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:31]:[RunTime: 15 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:31]:[RunTime: 15 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:3 {2}bullet:14 {3}userbullet:7  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:7
+[2017-11-25 10:14:31]:[RunTime: 15 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:31]:[RunTime: 15 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:800.923 {2}y:702.346
+[2017-11-25 10:14:31]:[RunTime: 15 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:31]:[RunTime: 15 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 2138112 Bytes Data.
+[2017-11-25 10:14:31]:[RunTime: 15 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:32]:[RunTime: 16 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:32]:[RunTime: 16 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:32]:[RunTime: 16 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:5 {2}bullet:60 {3}userbullet:15  {4}stopAnimation:2  {5}userBulletCurve:0  {6}BulletCurve:29
+[2017-11-25 10:14:32]:[RunTime: 16 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:32]:[RunTime: 16 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:681.373 {2}y:702.346
+[2017-11-25 10:14:32]:[RunTime: 16 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:32]:[RunTime: 16 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 2318336 Bytes Data.
+[2017-11-25 10:14:32]:[RunTime: 16 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:33]:[RunTime: 17 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:33]:[RunTime: 17 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:33]:[RunTime: 17 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:4 {2}bullet:28 {3}userbullet:9  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:12
+[2017-11-25 10:14:33]:[RunTime: 17 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:33]:[RunTime: 17 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:526.373 {2}y:702.346
+[2017-11-25 10:14:33]:[RunTime: 17 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:33]:[RunTime: 17 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 2498560 Bytes Data.
+[2017-11-25 10:14:33]:[RunTime: 17 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:34]:[RunTime: 18 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:34]:[RunTime: 18 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:34]:[RunTime: 18 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:8 {2}bullet:96 {3}userbullet:19  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:53
+[2017-11-25 10:14:34]:[RunTime: 18 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:34]:[RunTime: 18 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:366.823 {2}y:702.346
+[2017-11-25 10:14:34]:[RunTime: 18 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:34]:[RunTime: 18 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 2670592 Bytes Data.
+[2017-11-25 10:14:34]:[RunTime: 18 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:35]:[RunTime: 19 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:35]:[RunTime: 19 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:35]:[RunTime: 19 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:5 {2}bullet:90 {3}userbullet:19  {4}stopAnimation:1  {5}userBulletCurve:0  {6}BulletCurve:100
+[2017-11-25 10:14:35]:[RunTime: 19 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:35]:[RunTime: 19 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:271.274 {2}y:702.346
+[2017-11-25 10:14:35]:[RunTime: 19 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:35]:[RunTime: 19 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 2850816 Bytes Data.
+[2017-11-25 10:14:35]:[RunTime: 19 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:36]:[RunTime: 20 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:36]:[RunTime: 20 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:36]:[RunTime: 20 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:4 {2}bullet:26 {3}userbullet:10  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:12
+[2017-11-25 10:14:36]:[RunTime: 20 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:36]:[RunTime: 20 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:505.98 {2}y:702.346
+[2017-11-25 10:14:36]:[RunTime: 20 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:36]:[RunTime: 20 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 3031040 Bytes Data.
+[2017-11-25 10:14:36]:[RunTime: 20 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:37]:[RunTime: 21 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:37]:[RunTime: 21 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:37]:[RunTime: 21 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:3 {2}bullet:22 {3}userbullet:5  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:10
+[2017-11-25 10:14:37]:[RunTime: 21 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:37]:[RunTime: 21 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:479.724 {2}y:702.346
+[2017-11-25 10:14:37]:[RunTime: 21 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:37]:[RunTime: 21 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 3203072 Bytes Data.
+[2017-11-25 10:14:37]:[RunTime: 21 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:38]:[RunTime: 22 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:38]:[RunTime: 22 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:38]:[RunTime: 22 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:9 {2}bullet:107 {3}userbullet:15  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:57
+[2017-11-25 10:14:38]:[RunTime: 22 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:38]:[RunTime: 22 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:690.532 {2}y:702.346
+[2017-11-25 10:14:38]:[RunTime: 22 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:38]:[RunTime: 22 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 3383296 Bytes Data.
+[2017-11-25 10:14:38]:[RunTime: 22 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:39]:[RunTime: 23 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:39]:[RunTime: 23 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:39]:[RunTime: 23 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:2 {2}bullet:9 {3}userbullet:4  {4}stopAnimation:0  {5}userBulletCurve:8  {6}BulletCurve:4
+[2017-11-25 10:14:39]:[RunTime: 23 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:39]:[RunTime: 23 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:810.081 {2}y:702.346
+[2017-11-25 10:14:39]:[RunTime: 23 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:39]:[RunTime: 23 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 3563520 Bytes Data.
+[2017-11-25 10:14:39]:[RunTime: 23 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:40]:[RunTime: 24 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:40]:[RunTime: 24 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:40]:[RunTime: 24 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:8 {2}bullet:75 {3}userbullet:14  {4}stopAnimation:0  {5}userBulletCurve:22  {6}BulletCurve:35
+[2017-11-25 10:14:40]:[RunTime: 24 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:40]:[RunTime: 24 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:615.532 {2}y:702.346
+[2017-11-25 10:14:40]:[RunTime: 24 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:40]:[RunTime: 24 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 3735552 Bytes Data.
+[2017-11-25 10:14:40]:[RunTime: 24 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:41]:[RunTime: 25 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:41]:[RunTime: 25 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:41]:[RunTime: 25 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:9 {2}bullet:152 {3}userbullet:21  {4}stopAnimation:2  {5}userBulletCurve:33  {6}BulletCurve:101
+[2017-11-25 10:14:41]:[RunTime: 25 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:41]:[RunTime: 25 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:510.532 {2}y:702.346
+[2017-11-25 10:14:41]:[RunTime: 25 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:41]:[RunTime: 25 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 3915776 Bytes Data.
+[2017-11-25 10:14:41]:[RunTime: 25 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:42]:[RunTime: 26 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:42]:[RunTime: 26 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:42]:[RunTime: 26 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:5 {2}bullet:26 {3}userbullet:7  {4}stopAnimation:0  {5}userBulletCurve:14  {6}BulletCurve:12
+[2017-11-25 10:14:42]:[RunTime: 26 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:42]:[RunTime: 26 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:415.982 {2}y:702.346
+[2017-11-25 10:14:42]:[RunTime: 26 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:42]:[RunTime: 26 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 4096000 Bytes Data.
+[2017-11-25 10:14:42]:[RunTime: 26 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:43]:[RunTime: 27 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:43]:[RunTime: 27 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:43]:[RunTime: 27 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:1 {2}bullet:2 {3}userbullet:1  {4}stopAnimation:10  {5}userBulletCurve:2  {6}BulletCurve:1
+[2017-11-25 10:14:43]:[RunTime: 27 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:43]:[RunTime: 27 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:237.249 {2}y:702.346
+[2017-11-25 10:14:43]:[RunTime: 27 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:43]:[RunTime: 27 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 4268032 Bytes Data.
+[2017-11-25 10:14:43]:[RunTime: 27 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:44]:[RunTime: 28 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:44]:[RunTime: 28 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:44]:[RunTime: 28 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:7 {2}bullet:52 {3}userbullet:11  {4}stopAnimation:0  {5}userBulletCurve:18  {6}BulletCurve:25
+[2017-11-25 10:14:44]:[RunTime: 28 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:44]:[RunTime: 28 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:456.995 {2}y:702.346
+[2017-11-25 10:14:44]:[RunTime: 28 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:44]:[RunTime: 28 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 4448256 Bytes Data.
+[2017-11-25 10:14:44]:[RunTime: 28 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:45]:[RunTime: 29 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:45]:[RunTime: 29 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:45]:[RunTime: 29 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:3 {2}bullet:12 {3}userbullet:2  {4}stopAnimation:13  {5}userBulletCurve:4  {6}BulletCurve:5
+[2017-11-25 10:14:45]:[RunTime: 29 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:45]:[RunTime: 29 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:496.545 {2}y:702.346
+[2017-11-25 10:14:45]:[RunTime: 29 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:45]:[RunTime: 29 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 4620288 Bytes Data.
+[2017-11-25 10:14:45]:[RunTime: 29 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:46]:[RunTime: 30 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:46]:[RunTime: 30 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:46]:[RunTime: 30 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:14 {2}bullet:159 {3}userbullet:11  {4}stopAnimation:1  {5}userBulletCurve:24  {6}BulletCurve:76
+[2017-11-25 10:14:46]:[RunTime: 30 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:46]:[RunTime: 30 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:341.995 {2}y:702.346
+[2017-11-25 10:14:46]:[RunTime: 30 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:46]:[RunTime: 30 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 4800512 Bytes Data.
+[2017-11-25 10:14:46]:[RunTime: 30 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:47]:[RunTime: 31 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:47]:[RunTime: 31 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:47]:[RunTime: 31 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:10 {2}bullet:56 {3}userbullet:9  {4}stopAnimation:0  {5}userBulletCurve:18  {6}BulletCurve:26
+[2017-11-25 10:14:47]:[RunTime: 31 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:47]:[RunTime: 31 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:494.195 {2}y:702.346
+[2017-11-25 10:14:47]:[RunTime: 31 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:47]:[RunTime: 31 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 4980736 Bytes Data.
+[2017-11-25 10:14:47]:[RunTime: 31 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:48]:[RunTime: 32 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:48]:[RunTime: 32 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:48]:[RunTime: 32 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:19 {2}bullet:193 {3}userbullet:18  {4}stopAnimation:1  {5}userBulletCurve:32  {6}BulletCurve:107
+[2017-11-25 10:14:48]:[RunTime: 32 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:48]:[RunTime: 32 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:437.203 {2}y:702.346
+[2017-11-25 10:14:48]:[RunTime: 32 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:48]:[RunTime: 32 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 5152768 Bytes Data.
+[2017-11-25 10:14:48]:[RunTime: 32 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:49]:[RunTime: 33 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:49]:[RunTime: 33 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:49]:[RunTime: 33 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:12 {2}bullet:85 {3}userbullet:10  {4}stopAnimation:0  {5}userBulletCurve:20  {6}BulletCurve:41
+[2017-11-25 10:14:49]:[RunTime: 33 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:50]:[RunTime: 33 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:507.203 {2}y:702.346
+[2017-11-25 10:14:50]:[RunTime: 33 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:50]:[RunTime: 33 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 5332992 Bytes Data.
+[2017-11-25 10:14:50]:[RunTime: 33 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:51]:[RunTime: 34 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:51]:[RunTime: 34 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:51]:[RunTime: 34 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:16 {2}bullet:216 {3}userbullet:19  {4}stopAnimation:6  {5}userBulletCurve:30  {6}BulletCurve:131
+[2017-11-25 10:14:51]:[RunTime: 34 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:51]:[RunTime: 34 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:621.753 {2}y:702.346
+[2017-11-25 10:14:51]:[RunTime: 34 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:51]:[RunTime: 34 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 5513216 Bytes Data.
+[2017-11-25 10:14:51]:[RunTime: 34 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:52]:[RunTime: 35 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:52]:[RunTime: 35 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:52]:[RunTime: 35 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:12 {2}bullet:97 {3}userbullet:10  {4}stopAnimation:0  {5}userBulletCurve:20  {6}BulletCurve:46
+[2017-11-25 10:14:52]:[RunTime: 35 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:52]:[RunTime: 35 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:504.553 {2}y:702.346
+[2017-11-25 10:14:52]:[RunTime: 35 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:52]:[RunTime: 35 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 5685248 Bytes Data.
+[2017-11-25 10:14:52]:[RunTime: 35 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:53]:[RunTime: 36 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:53]:[RunTime: 36 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:53]:[RunTime: 36 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:0 {2}bullet:0 {3}userbullet:0  {4}stopAnimation:9  {5}userBulletCurve:0  {6}BulletCurve:0
+[2017-11-25 10:14:53]:[RunTime: 36 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:53]:[RunTime: 36 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:272.875 {2}y:702.346
+[2017-11-25 10:14:53]:[RunTime: 36 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:53]:[RunTime: 36 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 5865472 Bytes Data.
+[2017-11-25 10:14:53]:[RunTime: 36 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:54]:[RunTime: 37 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:54]:[RunTime: 37 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:54]:[RunTime: 37 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:12 {2}bullet:97 {3}userbullet:3  {4}stopAnimation:0  {5}userBulletCurve:5  {6}BulletCurve:45
+[2017-11-25 10:14:54]:[RunTime: 37 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:54]:[RunTime: 37 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:268.083 {2}y:702.346
+[2017-11-25 10:14:54]:[RunTime: 37 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:54]:[RunTime: 37 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 6045696 Bytes Data.
+[2017-11-25 10:14:54]:[RunTime: 37 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:55]:[RunTime: 38 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:55]:[RunTime: 38 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:55]:[RunTime: 38 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:2 {2}bullet:5 {3}userbullet:0  {4}stopAnimation:1  {5}userBulletCurve:0  {6}BulletCurve:2
+[2017-11-25 10:14:55]:[RunTime: 38 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:55]:[RunTime: 38 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:268.083 {2}y:702.346
+[2017-11-25 10:14:55]:[RunTime: 38 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:55]:[RunTime: 38 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 6217728 Bytes Data.
+[2017-11-25 10:14:55]:[RunTime: 38 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:56]:[RunTime: 39 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:56]:[RunTime: 39 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:56]:[RunTime: 39 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:14 {2}bullet:160 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:78
+[2017-11-25 10:14:56]:[RunTime: 39 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:56]:[RunTime: 39 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:268.083 {2}y:702.346
+[2017-11-25 10:14:56]:[RunTime: 39 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:56]:[RunTime: 39 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 6397952 Bytes Data.
+[2017-11-25 10:14:56]:[RunTime: 39 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:57]:[RunTime: 40 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:57]:[RunTime: 40 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:57]:[RunTime: 40 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:6 {2}bullet:23 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:10
+[2017-11-25 10:14:57]:[RunTime: 40 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:57]:[RunTime: 40 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:268.083 {2}y:702.346
+[2017-11-25 10:14:57]:[RunTime: 40 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:57]:[RunTime: 40 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 6578176 Bytes Data.
+[2017-11-25 10:14:57]:[RunTime: 40 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:58]:[RunTime: 41 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:58]:[RunTime: 41 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:58]:[RunTime: 41 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:19 {2}bullet:180 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:90
+[2017-11-25 10:14:58]:[RunTime: 41 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:58]:[RunTime: 41 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:268.083 {2}y:702.346
+[2017-11-25 10:14:58]:[RunTime: 41 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:58]:[RunTime: 41 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 6750208 Bytes Data.
+[2017-11-25 10:14:58]:[RunTime: 41 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:14:59]:[RunTime: 42 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:14:59]:[RunTime: 42 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:14:59]:[RunTime: 42 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:11 {2}bullet:73 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:33
+[2017-11-25 10:14:59]:[RunTime: 42 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:14:59]:[RunTime: 42 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:268.083 {2}y:702.346
+[2017-11-25 10:14:59]:[RunTime: 42 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:14:59]:[RunTime: 42 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 6922240 Bytes Data.
+[2017-11-25 10:14:59]:[RunTime: 42 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:0]:[RunTime: 43 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:0]:[RunTime: 43 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:0]:[RunTime: 43 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:1 {2}bullet:2 {3}userbullet:0  {4}stopAnimation:22  {5}userBulletCurve:0  {6}BulletCurve:1
+[2017-11-25 10:15:0]:[RunTime: 43 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:0]:[RunTime: 43 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:183.533 {2}y:702.346
+[2017-11-25 10:15:0]:[RunTime: 43 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:0]:[RunTime: 43 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 7102464 Bytes Data.
+[2017-11-25 10:15:0]:[RunTime: 43 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:1]:[RunTime: 44 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:1]:[RunTime: 44 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:1]:[RunTime: 44 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:13 {2}bullet:101 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:47
+[2017-11-25 10:15:1]:[RunTime: 44 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:1]:[RunTime: 44 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:183.533 {2}y:702.346
+[2017-11-25 10:15:1]:[RunTime: 44 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:1]:[RunTime: 44 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 7282688 Bytes Data.
+[2017-11-25 10:15:1]:[RunTime: 44 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:2]:[RunTime: 45 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:2]:[RunTime: 45 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:2]:[RunTime: 45 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:25 {2}bullet:240 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:150
+[2017-11-25 10:15:2]:[RunTime: 45 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:2]:[RunTime: 45 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:183.533 {2}y:702.346
+[2017-11-25 10:15:2]:[RunTime: 45 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:2]:[RunTime: 45 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 7454720 Bytes Data.
+[2017-11-25 10:15:2]:[RunTime: 45 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:3]:[RunTime: 46 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:3]:[RunTime: 46 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:3]:[RunTime: 46 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:9 {2}bullet:38 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:16
+[2017-11-25 10:15:3]:[RunTime: 46 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:3]:[RunTime: 46 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:203.533 {2}y:702.346
+[2017-11-25 10:15:3]:[RunTime: 46 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:3]:[RunTime: 46 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 7634944 Bytes Data.
+[2017-11-25 10:15:3]:[RunTime: 46 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:4]:[RunTime: 47 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:4]:[RunTime: 47 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:4]:[RunTime: 47 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:1 {2}bullet:2 {3}userbullet:0  {4}stopAnimation:20  {5}userBulletCurve:0  {6}BulletCurve:1
+[2017-11-25 10:15:4]:[RunTime: 47 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:4]:[RunTime: 47 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:457.158 {2}y:702.346
+[2017-11-25 10:15:4]:[RunTime: 47 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:4]:[RunTime: 47 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 7815168 Bytes Data.
+[2017-11-25 10:15:4]:[RunTime: 47 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:5]:[RunTime: 48 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:5]:[RunTime: 48 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:5]:[RunTime: 48 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:13 {2}bullet:85 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:40
+[2017-11-25 10:15:5]:[RunTime: 48 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:5]:[RunTime: 48 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:378.083 {2}y:702.346
+[2017-11-25 10:15:5]:[RunTime: 48 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:5]:[RunTime: 48 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 7987200 Bytes Data.
+[2017-11-25 10:15:5]:[RunTime: 48 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:6]:[RunTime: 49 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:6]:[RunTime: 49 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:6]:[RunTime: 49 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:1 {2}bullet:2 {3}userbullet:0  {4}stopAnimation:24  {5}userBulletCurve:0  {6}BulletCurve:1
+[2017-11-25 10:15:6]:[RunTime: 49 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:6]:[RunTime: 49 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:243.533 {2}y:702.346
+[2017-11-25 10:15:6]:[RunTime: 49 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:6]:[RunTime: 49 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 8167424 Bytes Data.
+[2017-11-25 10:15:6]:[RunTime: 49 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:7]:[RunTime: 50 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:7]:[RunTime: 50 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:7]:[RunTime: 50 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:13 {2}bullet:99 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:46
+[2017-11-25 10:15:7]:[RunTime: 50 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:7]:[RunTime: 50 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:406.708 {2}y:702.346
+[2017-11-25 10:15:7]:[RunTime: 50 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:7]:[RunTime: 50 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 8339456 Bytes Data.
+[2017-11-25 10:15:7]:[RunTime: 50 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:8]:[RunTime: 51 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:8]:[RunTime: 51 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:8]:[RunTime: 51 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:1 {2}bullet:2 {3}userbullet:0  {4}stopAnimation:4  {5}userBulletCurve:0  {6}BulletCurve:1
+[2017-11-25 10:15:8]:[RunTime: 51 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:8]:[RunTime: 51 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:106.708 {2}y:702.346
+[2017-11-25 10:15:8]:[RunTime: 51 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:8]:[RunTime: 51 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 8519680 Bytes Data.
+[2017-11-25 10:15:8]:[RunTime: 51 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:9]:[RunTime: 52 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:9]:[RunTime: 52 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:9]:[RunTime: 52 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:13 {2}bullet:92 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:43
+[2017-11-25 10:15:9]:[RunTime: 52 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:9]:[RunTime: 52 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:127.964 {2}y:702.346
+[2017-11-25 10:15:9]:[RunTime: 52 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:9]:[RunTime: 52 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 8699904 Bytes Data.
+[2017-11-25 10:15:9]:[RunTime: 52 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:10]:[RunTime: 53 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:10]:[RunTime: 53 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:10]:[RunTime: 53 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:1 {2}bullet:2 {3}userbullet:0  {4}stopAnimation:24  {5}userBulletCurve:0  {6}BulletCurve:1
+[2017-11-25 10:15:10]:[RunTime: 53 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:10]:[RunTime: 53 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:131.708 {2}y:702.346
+[2017-11-25 10:15:10]:[RunTime: 53 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:10]:[RunTime: 53 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 8871936 Bytes Data.
+[2017-11-25 10:15:10]:[RunTime: 53 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:11]:[RunTime: 54 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:11]:[RunTime: 54 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:11]:[RunTime: 54 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:13 {2}bullet:95 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:46
+[2017-11-25 10:15:11]:[RunTime: 54 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:11]:[RunTime: 54 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:207.514 {2}y:702.346
+[2017-11-25 10:15:11]:[RunTime: 54 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:11]:[RunTime: 54 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 9052160 Bytes Data.
+[2017-11-25 10:15:11]:[RunTime: 54 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:12]:[RunTime: 55 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:12]:[RunTime: 55 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:12]:[RunTime: 55 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:1 {2}bullet:2 {3}userbullet:0  {4}stopAnimation:2  {5}userBulletCurve:0  {6}BulletCurve:1
+[2017-11-25 10:15:12]:[RunTime: 55 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:12]:[RunTime: 55 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:270.51 {2}y:702.346
+[2017-11-25 10:15:12]:[RunTime: 55 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:12]:[RunTime: 55 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 9224192 Bytes Data.
+[2017-11-25 10:15:12]:[RunTime: 55 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:13]:[RunTime: 56 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:13]:[RunTime: 56 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:13]:[RunTime: 56 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:13 {2}bullet:98 {3}userbullet:0  {4}stopAnimation:0  {5}userBulletCurve:0  {6}BulletCurve:45
+[2017-11-25 10:15:13]:[RunTime: 56 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:13]:[RunTime: 56 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:315.059 {2}y:702.346
+[2017-11-25 10:15:13]:[RunTime: 56 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:13]:[RunTime: 56 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 9404416 Bytes Data.
+[2017-11-25 10:15:13]:[RunTime: 56 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================
+[2017-11-25 10:15:14]:[RunTime: 57 seconds]:[INFO at File() id(1) Line(0)]=====================New Information==========================
+[2017-11-25 10:15:14]:[RunTime: 57 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(345)]Variable Information:
+[2017-11-25 10:15:14]:[RunTime: 57 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(351)]Vector Size{1}enemy:1 {2}bullet:2 {3}userbullet:0  {4}stopAnimation:4  {5}userBulletCurve:0  {6}BulletCurve:1
+[2017-11-25 10:15:14]:[RunTime: 57 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(357)]Vector Address{1}enemy:0x10fa22c58 {2}bullet:0x10fa22c70 {3}userbullet:0x10fa22c88  {4}stopAnimation:0x10fa23108  {5}userBulletCurve:0x10fa22cb8  {6}BulletCurve:0x10fa22ca0
+[2017-11-25 10:15:14]:[RunTime: 57 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(361)]Player Point{1}x:315.059 {2}y:702.346
+[2017-11-25 10:15:14]:[RunTime: 57 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(365)]PCMPlaying: Status Normal
+[2017-11-25 10:15:14]:[RunTime: 57 seconds]:[INFO at File(/Users/peterzheng/GitHubProjects/STG_Game_2017Fall/src/main.cpp) id(1) Line(368)]PCMPlaying: NowPlaying 9584640 Bytes Data.
+[2017-11-25 10:15:14]:[RunTime: 57 seconds]:[INFO at File() id(1) Line(0)]=====================Information End==========================

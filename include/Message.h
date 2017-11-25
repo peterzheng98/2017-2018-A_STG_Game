@@ -10,7 +10,8 @@ extern int cTimer;
 
 const char *ID2Note[4] = {"INFO", "WARN", "Exception", "FatalError"};
 
-struct Message {
+class Message {
+private:
     int type;
     int id;
     string text;
@@ -19,7 +20,7 @@ struct Message {
     string FileName;
     int line;
     tm Time;
-
+public:
     void print() {
         time_t timer;
         time(&timer);
